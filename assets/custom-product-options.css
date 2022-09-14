@@ -31,7 +31,9 @@ input[type="checkbox"], input[type="radio"] {
 }
 @media only screen and (max-width: 767px) {
   .checkbox-button input[type="checkbox"]+label, .checkbox-button input[type="radio"]+label{margin-right:10px;margin-bottom:10px;}
-  .checkbox-button input[type="checkbox"]+label, .checkbox-button input[type="radio"]+label, select {
+  .checkbox-button input[type="checkbox"]+label, .checkbox-button input[type="radio"]+label, select,
+  .featured--product-select .disclosure--toggle,
+  .featured--product-select .disclosure--option-link {
     font-size: 11px;
     padding: 10px;
   }

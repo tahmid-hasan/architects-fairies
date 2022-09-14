@@ -36,7 +36,7 @@
           "type": "options",
           "settings": {
             "variant-style": "buttons",
-            "swatches-enabled": true,
+            "swatches-enabled": false,
             "size-chart-enabled": true,
             "size-chart-option": "size",
             "size-chart-content": "",
@@ -47,11 +47,6 @@
           "type": "buy-buttons",
           "settings": {
             "smart-payment-enabled": true
-          }
-        },
-        "vendor": {
-          "type": "vendor",
-          "settings": {
           }
         },
         "pickup": {
@@ -108,7 +103,6 @@
         "83286844-4c17-49d8-891f-892aea7c963c",
         "options",
         "buy-buttons",
-        "vendor",
         "pickup",
         "thumbnails",
         "divider",

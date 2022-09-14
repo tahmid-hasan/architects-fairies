@@ -1,6 +1,6 @@
 {% assign settings_link = settings.color--alternative %}
 <div
-  class="slideshow--root"
+  class="slideshow--root{% if section.settings.unique-class != blank %} {{ section.settings.unique-class | handle }}{% endif %}"
   data-section-id="{{ section.id }}"
 >
   {%
@@ -32,6 +32,11 @@
   "name": "Slideshow",
   "class": "section--slideshow",
   "settings": [
+    {
+      "id": "unique-class",
+      "type": "text",
+      "label": "Unique class"
+    },
     {
       "id": "text-color",
       "label": "Text color",
@@ -241,22 +246,22 @@
           "id": "space_horizontal",
           "label": "Destance from left or right",
           "type": "range",
-          "unit": "px",
+          "unit": "%",
           "min": 0,
-          "max": 200,
-          "step": 2,
-          "default": 40,
+          "max": 100,
+          "step": 1,
+          "default": 2,
           "info": "Referance will be change based on 'Text Position' value from the setting above"
         },
         {
           "id": "space_vertical",
           "label": "Destance from top or bottom",
           "type": "range",
-          "unit": "px",
+          "unit": "%",
           "min": 0,
-          "max": 200,
-          "step": 2,
-          "default": 40,
+          "max": 100,
+          "step": 1,
+          "default": 2,
           "info": "Referance will be change based on 'Text Position' value from the setting above"
         },
         {

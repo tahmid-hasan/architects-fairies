@@ -10,10 +10,12 @@
     text_color: section.settings.text-color,
     bg_color: section.settings.background-color,
     box_around_text: section.settings.box-around-text,
+    shadow_around_text: section.settings.shadow-around-text,
     container_width: section.settings.container-width,
     darken_image: section.settings.darken-image,
     description: section.settings.description,
     image: section.settings.image,
+    image_mobile: section.settings.image_mobile,
     image_height: section.settings.image-height,
     link_text: section.settings.link-text,
     link_url: section.settings.link-url,
@@ -25,7 +27,9 @@
     spacing_below: section.settings.spacing-below,
     text_position: section.settings.text-position,
     text_width: section.settings.text-width,
-    title: section.settings.title
+    title: section.settings.title,
+    image_with_text: true,
+    blocks: section.blocks
   %}
 </div>
  
@@ -114,6 +118,7 @@
         { "label": "Bottom", "value": "bottom" },
         { "label": "Left", "value": "left" },
         { "label": "Center", "value": "center" },
+        { "label": "Center Right", "value": "center-right" },
         { "label": "Right", "value": "right" },
         { "label": "Bottom left", "value": "bottom-left" }
       ],
@@ -144,6 +149,12 @@
       "default": false
     },
     {
+      "id": "shadow-around-text",
+      "label": "Show shadow around text",
+      "type": "checkbox",
+      "default": false
+    },
+    {
       "id": "mobile-overlay",
       "label": "Overlay text on small devices",
       "type": "checkbox",
@@ -156,6 +167,11 @@
     {
       "id": "image",
       "label": "Image",
+      "type": "image_picker"
+    },
+    {
+      "id": "image_mobile",
+      "label": "Image for small devices",
       "type": "image_picker"
     },
     {
@@ -185,6 +201,33 @@
       "id": "link-text",
       "label": "Link text",
       "type": "text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Content block",
+      "limit": 3,
+      "settings": [
+        {
+          "id": "title",
+          "label": "Heading",
+          "type": "text",
+          "default": "Image with text"
+        },
+        {
+          "id": "description",
+          "label": "Text",
+          "type": "richtext",
+          "default": "<p>Combine imagery with text to create stand-out campaign sections, eye-catching promotions, information blocks and more.</p>"
+        },
+        {
+          "id": "is-list",
+          "label": "Show paragraph as list",
+          "type": "checkbox",
+          "default": false
+        }
+      ]
     }
   ],
   "presets": [

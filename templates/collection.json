@@ -6,6 +6,8 @@
         "1662419061a2ca315e-0": {
           "type": "image",
           "settings": {
+            "image": "{{ collection.metafields.banner.image.value }}",
+            "image_mobile": "{{ collection.metafields.banner.image_mobile.value }}",
             "overline": "",
             "title": "",
             "description": "",
@@ -30,10 +32,11 @@
         "1662419061a2ca315e-0"
       ],
       "settings": {
+        "unique-class": "",
         "text-color": "auto",
         "background-color": "none",
         "spacing-above": false,
-        "spacing-below": true,
+        "spacing-below": false,
         "spacing-around-blocks": false,
         "image-height": 0,
         "darken-image": false,
@@ -77,6 +80,7 @@
         "text-width": "small",
         "overlap": true,
         "box-around-text": true,
+        "shadow-around-text": false,
         "mobile-overlay": false,
         "overline": "",
         "title": "",
@@ -148,6 +152,7 @@
         "text-width": "medium",
         "overlap": false,
         "box-around-text": false,
+        "shadow-around-text": false,
         "mobile-overlay": true,
         "overline": "Overline text",
         "title": "Collection Promotion",

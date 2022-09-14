@@ -6,20 +6,20 @@
         "c9c8b210-6728-4e38-a5ae-8b6fac5169b6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/WHITE-_Infogram.png",
-            "image_mobile": "shopify:\/\/shop_images\/White-infogram-mobile.png",
-            "overline": "",
-            "title": "",
+            "image": "shopify:\/\/shop_images\/infographic_banner_1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/infographic_banner_1_mobile_ec29a32a-8b9a-410b-8a3d-b76f28cd708f.jpg",
+            "overline": "A LASH SERUM",
+            "title": "customized lash & Brow After-care in 3 easy steps.",
             "description": "",
             "text_align": "left",
             "text_transform": "uppercase",
             "link-url": "\/",
-            "link-text": "",
+            "link-text": "SHOP NOW",
             "text-position": "bottom-left",
-            "space_horizontal": 40,
-            "space_vertical": 40,
-            "inner_space_vertical": 32,
-            "inner_space_horizontal": 32,
+            "space_horizontal": 2,
+            "space_vertical": 5,
+            "inner_space_vertical": 20,
+            "inner_space_horizontal": 20,
             "text-width": "small",
             "text_color": "#000000",
             "text_background": "#ffffff80",
@@ -30,25 +30,25 @@
         "150483a1-4815-47e6-b3e8-b68ddd12f7da": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slideshow_Infogram_banners_2.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/slideshow_Infogram_banner_mobile_2.jpg",
-            "overline": "",
-            "title": "",
+            "image": "shopify:\/\/shop_images\/slideshow_Infogram_banners_2_69120430-d7f2-420f-8eb4-b131d77b6410.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/slideshow_Infogram_banners_2_mobile.jpg",
+            "overline": "A LASH SERUM",
+            "title": "customized lash & Brow After-care in 3 easy steps.",
             "description": "",
             "text_align": "left",
-            "text_transform": "none",
+            "text_transform": "uppercase",
             "link-url": "\/",
-            "link-text": "",
+            "link-text": "SHOP NOW",
             "text-position": "bottom-left",
-            "space_horizontal": 40,
-            "space_vertical": 40,
+            "space_horizontal": 2,
+            "space_vertical": 19,
             "inner_space_vertical": 20,
             "inner_space_horizontal": 20,
-            "text-width": "medium",
+            "text-width": "small",
             "text_color": "#000000",
-            "text_background": "#ffffff",
+            "text_background": "#ffffff80",
             "text_background_opacity": 1,
-            "shadow_around_box": false
+            "shadow_around_box": true
           }
         },
         "af5d2cfd-ecc4-47bf-a41e-2e5bef44ce34": {
@@ -107,6 +107,7 @@
         "3b409380-1c0c-477b-9425-e1e25ddc6768"
       ],
       "settings": {
+        "unique-class": "site-banner-infogram",
         "text-color": "light",
         "background-color": "light",
         "spacing-above": false,
@@ -138,6 +139,7 @@
     },
     "1660847897f721785b": {
       "type": "slideshow",
+      "disabled": true,
       "blocks": {
         "1660847897b268c2d0-0": {
           "type": "image",
@@ -168,10 +170,11 @@
         "1660847897b268c2d0-0"
       ],
       "settings": {
+        "unique-class": "",
         "text-color": "auto",
         "background-color": "none",
         "spacing-above": false,
-        "spacing-below": true,
+        "spacing-below": false,
         "spacing-around-blocks": false,
         "image-height": 0,
         "darken-image": false,
@@ -182,6 +185,45 @@
         "auto-rotate": false,
         "rotate-frequency": 7,
         "transition_type": "slide"
+      }
+    },
+    "166314544434c0d78f": {
+      "type": "image-with-text",
+      "blocks": {
+        "be024e5c-18b7-4bea-90e8-b08c56acdc5c": {
+          "type": "content",
+          "settings": {
+            "title": "AND HERE’S WHY:",
+            "description": "<p>Control what your clients use on their lashes and ensure they’re using the <strong>correct products<\/strong>.<\/p><p>Increase your profit margin and<strong> create more income <\/strong>without the need to add more services.<\/p><p>Elevate your brand to a professional level and increase brand loyalty.<\/p>",
+            "is-list": true
+          }
+        }
+      },
+      "block_order": [
+        "be024e5c-18b7-4bea-90e8-b08c56acdc5c"
+      ],
+      "settings": {
+        "text-color": "auto",
+        "background-color": "none",
+        "container-width": 6,
+        "spacing-above": false,
+        "spacing-below": true,
+        "image-height": 0,
+        "darken-image": false,
+        "parallax-enabled": false,
+        "text-position": "center-right",
+        "text-width": "medium",
+        "overlap": false,
+        "box-around-text": true,
+        "shadow-around-text": true,
+        "mobile-overlay": false,
+        "image": "shopify:\/\/shop_images\/brand_identity_bg.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/brand_identity_bg_mobile.jpg",
+        "overline": "",
+        "title": "WHY PRIVATE LABEL",
+        "description": "<p>Create a winning retail brand that <strong>sets you apart<\/strong> from the crowd.<\/p><p>Choose Lash and Brow aftercare products from our superior line of products and then<strong> add your label and branding<\/strong> to <strong>sell as your own retail products.<\/strong><\/p><p>Whether you are a solo lash artist or a salon with multiple team members,  <strong>retailing your own line of lash<\/strong> after is a must!<\/p>",
+        "link-url": "",
+        "link-text": ""
       }
     },
     "1660562785cc4e80cf": {
@@ -215,7 +257,7 @@
           "type": "options",
           "settings": {
             "variant-style": "buttons",
-            "swatches-enabled": true,
+            "swatches-enabled": false,
             "size-chart-enabled": true,
             "size-chart-option": "size",
             "size-chart-content": "",
@@ -430,6 +472,7 @@
     "slideshow",
     "1660545022d25c6b6d",
     "1660847897f721785b",
+    "166314544434c0d78f",
     "1660562785cc4e80cf",
     "16599972219fe64bc1",
     "1660676992c067edfc",

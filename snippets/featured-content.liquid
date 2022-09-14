@@ -50,17 +50,23 @@
     assign heading_type = 'featured-heading'
   endif
 
+  assign content_blocks = blocks | where: 'type', 'content'
+
   assign text_exists = false
-  if overline != blank or title != blank or description != blank or link_text != blank
+  if overline != blank or title != blank or description != blank or link_text != blank or content_blocks.size != 0
     assign text_exists = true
   endif
+
+  
 %}
 
 <div
+  data-content-blocks="{{ content_blocks.size }}"
   class="featured-content--root"
   data-background-color="{{ bg_color }}"
   data-banner-promo="{{ banner_promo }}"
   data-box-around-text="{{ box_around_text }}"
+  data-shadow-around-text="{{ shadow_around_text }}"
   data-container-width="{{ container_width }}"
   data-cover-image="{{ cover_image }}"
   data-cover-image-mobile="{{ cover_image_mobile }}"
@@ -128,7 +134,7 @@
             </h2>
           {% endif %}
           {% if title != blank %}
-            <h3 class="featured-content--title" data-item="{{ heading_type }} {{ mobile_heading_type }}">
+            <h3 class="featured-content--title{% if image_with_text == true %} brush--stroke-large{% endif %}" data-item="{{ heading_type }} {{ mobile_heading_type }}">
               {{ title | escape }}
             </h3>
           {% endif %}
@@ -152,6 +158,18 @@
               {% endif %}
             </div>
           {% endif %}
+          {% for block in content_blocks %}
+            {% if block.settings.title != blank %}
+              <h3 class="featured-content--title{% if image_with_text == true %} brush--stroke-large{% endif %}" data-item="{{ heading_type }} {{ mobile_heading_type }}">
+                {{ block.settings.title | escape }}
+              </h3>
+            {% endif %}
+            {% if block.settings.description != blank %}
+              <div class="featured-content--description" data-item="rte-content" data-ordered-list="{{ block.settings.is-list }}">
+                {{ block.settings.description }}
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     {% endif %}

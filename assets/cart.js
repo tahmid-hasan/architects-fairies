@@ -116,6 +116,7 @@ class Cart extends HTMLElement{
           var a=await this.updateQuantity(t,e);
           await Cart.updateAllHtml(),a||this.showQuantityError(t)
           this.updatePromoProduct()
+          location.reload()
         }
         catch{}
       }
@@ -163,6 +164,7 @@ class Cart extends HTMLElement{
           await this.updateQuantity(e,t)
           await Cart.updateAllHtml()
           this.updatePromoProduct()
+          location.reload()
         }
         catch{}
       }

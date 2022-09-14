@@ -21,36 +21,38 @@
     "typography--paragraph--size": "medium",
     "product--hover-image-enabled": true,
     "product--show-rating": true,
+    "product--swatches-enabled": false,
     "product--text-alignment": "center",
     "product--label-shape": "round",
     "product--label-color": "light",
     "product--show-sale-label": "false",
     "product--show-new-label": true,
-    "product--new-label-period": 63,
+    "product--new-label-period": 90,
     "product--show-quantity": true,
     "search--show-in-header": true,
     "search--show-articles": false,
-    "social--instagram--url": "MMM",
-    "social--facebook--url": "#",
+    "social--instagram--url": "https:\/\/www.instagram.com\/architectsandfairies\/",
+    "social--facebook--url": "https:\/\/www.facebook.com\/architectsandfairies",
+    "social--pinterest--url": "https:\/\/www.pinterest.com\/0ff22x4kvspaw0x820x4kw7t5s28qd\/",
     "popup--enabled": false,
     "cart--type": "page",
     "cart--show-note": true,
     "sample_set_1_max_product": 2,
-    "sample_set_1_heading": "Get 2 free samples with each order",
-    "set_1_product_1": "plump-it-hydrating-lip-mask-starlight",
-    "set_1_product_2": "flutter-wands-sparkle",
-    "set_1_product_3": "revive-24kt-cooling-eye-mask-1",
-    "set_1_product_4": "plump-it-hydrating-lip-mask",
+    "sample_set_1_heading": "Get 2 free samples (If out of stock samples will be replaced at our discretion)",
+    "set_1_product_1": "glam-bag-free",
+    "set_1_product_2": "jolie-compact-mirror-free",
+    "set_1_product_3": "plump-it-hydrating-lip-mask-gold-free",
+    "set_1_product_4": "",
     "set_1_product_5": "",
     "set_1_product_6": "",
-    "sample_set_2_max_product": 3,
-    "sample_set_2_heading": "Get 3 free samples with each order",
+    "sample_set_2_max_product": 2,
+    "sample_set_2_heading": "Get 2 free samples (If out of stock samples will be replaced at our discretion)",
     "set_2_product_1": "plume-precision-lash-cleansing-brush-1",
-    "set_2_product_2": "excell-eyelash-cleansing-brush-1",
-    "set_2_product_3": "plump-it-hydrating-lip-mask",
-    "set_2_product_4": "revive-24kt-cooling-eye-mask-1",
+    "set_2_product_2": "",
+    "set_2_product_3": "",
+    "set_2_product_4": "",
     "set_2_product_5": "flutter-wands-sparkle",
-    "set_2_product_6": "plump-it-hydrating-lip-mask-starlight",
+    "set_2_product_6": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/AF_2_-TM-header2_900x_400x_7222947c-7523-431c-980b-d84b21876002.webp",
     "checkout_logo_position": "center",
     "checkout_logo_size": "small",
@@ -65,181 +67,194 @@
       "header": {
         "type": "header",
         "blocks": {
-          "b31930de-5071-4dc7-9796-6d2869721b82": {
+          "5dd05191-0568-4823-8b05-66a386596ae2": {
             "type": "column",
             "settings": {
-              "heading": "Custom Products",
+              "heading": "Custom products\/Wholesale",
               "title": "Cleansers",
-              "underline_column_heading": false,
-              "menu": "cleansers",
-              "linked_to": "shopify:\/\/collections\/all-cleansers-1"
-            }
-          },
-          "49c0a904-9910-403a-98c9-c64b86802ba1": {
-            "type": "column",
-            "settings": {
-              "heading": "Custom Products",
-              "title": "Lip + Eye Mask",
-              "underline_column_heading": false,
-              "menu": "lip-eye-masks",
-              "linked_to": ""
-            }
-          },
-          "2ca88ceb-b346-406a-9db1-3d5c987de640": {
-            "type": "column",
-            "settings": {
-              "heading": "Custom Products",
-              "title": "Sample Packs",
-              "underline_column_heading": false,
-              "menu": "sample-packs",
-              "linked_to": ""
-            }
-          },
-          "75b7e06e-fa6f-4119-9c0f-86cd32d32bfc": {
-            "type": "column",
-            "settings": {
-              "heading": "Custom Products",
-              "title": "Lash + Brow Serum",
-              "underline_column_heading": false,
-              "menu": "lash-brow-serum",
-              "linked_to": ""
-            }
-          },
-          "6456a79e-b1ad-4ee7-8e8f-7673b7051b48": {
-            "type": "column",
-            "settings": {
-              "heading": "Custom Products",
-              "title": "Brushes + Wands",
-              "underline_column_heading": false,
-              "menu": "brushes-wands",
-              "linked_to": ""
-            }
-          },
-          "1f74f0f3-2a33-40f8-8b1d-92ff36abe21e": {
-            "type": "column",
-            "settings": {
-              "heading": "Custom Products",
-              "title": "Aftercare Kits",
-              "underline_column_heading": false,
-              "menu": "after-care-kits",
-              "linked_to": ""
-            }
-          },
-          "250c2233-7734-4d48-ac84-c195f283a7b9": {
-            "type": "column",
-            "settings": {
-              "heading": "Custom Products",
-              "title": "Digital Consent Forms",
-              "underline_column_heading": false,
-              "menu": "digital-consent-forms",
-              "linked_to": ""
-            }
-          },
-          "869a879b-abce-4e8d-8984-bf4589a7bbc2": {
-            "type": "column",
-            "settings": {
-              "heading": "Retail",
-              "title": "Cleansers",
-              "underline_column_heading": false,
-              "menu": "header-item",
-              "linked_to": ""
-            }
-          },
-          "ccae52bd-3e68-488d-9522-59aa1dc61256": {
-            "type": "column",
-            "settings": {
-              "heading": "Retail",
-              "title": "Lip + Eye Mask",
-              "underline_column_heading": false,
-              "menu": "header-item",
-              "linked_to": ""
-            }
-          },
-          "0a2d4e2c-5965-4f0f-bdf7-5c77b31c654d": {
-            "type": "column",
-            "settings": {
-              "heading": "Retail",
-              "title": "Lash + Brow Serum",
-              "underline_column_heading": false,
-              "menu": "header-item",
-              "linked_to": ""
-            }
-          },
-          "bdac1e5c-9e8a-4c07-a37e-899ac765a769": {
-            "type": "column",
-            "settings": {
-              "heading": "Retail",
-              "title": "Brushes + Wands",
-              "underline_column_heading": false,
-              "menu": "header-item",
-              "linked_to": ""
-            }
-          },
-          "76a96573-fa8d-4752-97cc-5f92f37211ac": {
-            "type": "column",
-            "settings": {
-              "heading": "Retail",
-              "title": "Aftercarekits",
-              "underline_column_heading": false,
-              "menu": "after-care-kits",
-              "linked_to": ""
-            }
-          },
-          "5bf723bb-37d9-464c-aa90-451f49060548": {
-            "type": "column",
-            "settings": {
-              "heading": "Info",
-              "title": "About Us",
-              "underline_column_heading": false,
-              "menu": "about-us",
-              "linked_to": ""
-            }
-          },
-          "bb0702c4-d2bb-4856-bc99-e076f8248562": {
-            "type": "column",
-            "settings": {
-              "heading": "Info",
-              "title": "Legal",
-              "underline_column_heading": false,
-              "menu": "legal",
-              "linked_to": ""
-            }
-          },
-          "b6a66f79-6f4e-41af-887f-9e8b1163ad38": {
-            "type": "column",
-            "settings": {
-              "heading": "Info",
-              "title": "Lash\/Brow Serum",
               "underline_column_heading": true,
-              "menu": "",
-              "image": "shopify:\/\/shop_images\/collection_list_infogram_mobile_5.jpg",
-              "linked_to": "shopify:\/\/products\/ultimate-sampler-pack"
+              "menu": "cleansers",
+              "image": "{{ shop.brand.cover_image }}",
+              "linked_to": "shopify:\/\/collections\/lashbath-bare-edition"
+            }
+          },
+          "7eab4304-940b-4fa7-981e-1de9e9643b7a": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom products\/Wholesale",
+              "title": "Lip + Eye Masks",
+              "underline_column_heading": true,
+              "menu": "bare-edition-lip-eye-masks",
+              "image": "{{ shop.brand.cover_image }}",
+              "linked_to": "#"
+            }
+          },
+          "5008aaab-6244-4348-8a5f-d2d908a3372e": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom products\/Wholesale",
+              "title": "Sample Packs",
+              "underline_column_heading": true,
+              "menu": "sample-packs",
+              "linked_to": "#"
+            }
+          },
+          "3f541231-7d27-4255-bbbd-99512d1ccf83": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom products\/Wholesale",
+              "title": "Lash + Brow Serum",
+              "underline_column_heading": true,
+              "menu": "lash-brow-serum",
+              "linked_to": "#"
+            }
+          },
+          "45630b0a-0177-41e1-910d-e8fd6ce44880": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom products\/Wholesale",
+              "title": "Brushes + Wands",
+              "underline_column_heading": true,
+              "menu": "brushes-wands",
+              "linked_to": "#"
+            }
+          },
+          "055a9bc7-f3fa-441d-8ee9-3a46a6635d04": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom products\/Wholesale",
+              "title": "After Care Kits",
+              "underline_column_heading": true,
+              "menu": "after-care-kits",
+              "linked_to": "#"
+            }
+          },
+          "961de6cb-46de-4f7b-b33b-b50892750c73": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom products\/Wholesale",
+              "title": "Accessories",
+              "underline_column_heading": true,
+              "menu": "wholesale-accessories",
+              "linked_to": ""
+            }
+          },
+          "c66d557f-fda3-4a95-aebb-ba8e9b1d8a67": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom products\/Wholesale",
+              "title": "Digital Consent Forms",
+              "underline_column_heading": true,
+              "menu": "digital-consent-forms",
+              "linked_to": "#"
+            }
+          },
+          "d4665234-9c2b-40a3-bb18-d9f5fb34baba": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom products\/Wholesale",
+              "title": "FAQ",
+              "underline_column_heading": true,
+              "menu": "faq",
+              "linked_to": "https:\/\/www.architectsandfairies.com\/a\/faq"
+            }
+          },
+          "1e935ac1-9bb8-4037-a412-9c4023adcf64": {
+            "type": "column",
+            "settings": {
+              "heading": "Retail",
+              "title": "CLEANSERS",
+              "underline_column_heading": true,
+              "menu": "header-item",
+              "image": "{{ shop.brand.cover_image }}",
+              "linked_to": "shopify:\/\/collections\/all-cleansers"
+            }
+          },
+          "5fb6d10a-f3c7-4f7b-b3be-75239602e258": {
+            "type": "column",
+            "settings": {
+              "heading": "Retail",
+              "title": "LIP + EYE MASKS",
+              "underline_column_heading": true,
+              "menu": "lip-eye-masks",
+              "linked_to": "shopify:\/\/collections\/lip-eye-masks"
+            }
+          },
+          "65006463-c9e2-4abe-81ef-dc20c3970a43": {
+            "type": "column",
+            "settings": {
+              "heading": "Retail",
+              "title": "LASH + BROW SERUM",
+              "underline_column_heading": true,
+              "menu": "lash-brow-serum",
+              "linked_to": "shopify:\/\/collections"
+            }
+          },
+          "00b9e175-e386-45ef-9cc1-fce60644c6c9": {
+            "type": "column",
+            "settings": {
+              "heading": "Retail",
+              "title": "BRUSHES + WANDS",
+              "underline_column_heading": true,
+              "menu": "brushes-wands",
+              "linked_to": "shopify:\/\/collections\/bare-edition-brushes"
+            }
+          },
+          "04f6a5c3-8ce7-4cc8-abb0-2ce5c815a972": {
+            "type": "column",
+            "settings": {
+              "heading": "Retail",
+              "title": "AFTERCARE KITS",
+              "underline_column_heading": true,
+              "menu": "after-care-kits",
+              "linked_to": ""
+            }
+          },
+          "ef0da6a4-e324-4208-a152-5b6bbf7c2722": {
+            "type": "column",
+            "settings": {
+              "heading": "Retail",
+              "title": "Accessories",
+              "underline_column_heading": true,
+              "menu": "accessories",
+              "linked_to": ""
+            }
+          },
+          "69e00dac-ae41-441c-9565-7c63321d7059": {
+            "type": "column",
+            "settings": {
+              "heading": "Info",
+              "title": "",
+              "underline_column_heading": true,
+              "menu": "info",
+              "linked_to": ""
             }
           }
         },
         "block_order": [
-          "b31930de-5071-4dc7-9796-6d2869721b82",
-          "49c0a904-9910-403a-98c9-c64b86802ba1",
-          "2ca88ceb-b346-406a-9db1-3d5c987de640",
-          "75b7e06e-fa6f-4119-9c0f-86cd32d32bfc",
-          "6456a79e-b1ad-4ee7-8e8f-7673b7051b48",
-          "1f74f0f3-2a33-40f8-8b1d-92ff36abe21e",
-          "250c2233-7734-4d48-ac84-c195f283a7b9",
-          "869a879b-abce-4e8d-8984-bf4589a7bbc2",
-          "ccae52bd-3e68-488d-9522-59aa1dc61256",
-          "0a2d4e2c-5965-4f0f-bdf7-5c77b31c654d",
-          "bdac1e5c-9e8a-4c07-a37e-899ac765a769",
-          "76a96573-fa8d-4752-97cc-5f92f37211ac",
-          "5bf723bb-37d9-464c-aa90-451f49060548",
-          "bb0702c4-d2bb-4856-bc99-e076f8248562",
-          "b6a66f79-6f4e-41af-887f-9e8b1163ad38"
+          "5dd05191-0568-4823-8b05-66a386596ae2",
+          "7eab4304-940b-4fa7-981e-1de9e9643b7a",
+          "5008aaab-6244-4348-8a5f-d2d908a3372e",
+          "3f541231-7d27-4255-bbbd-99512d1ccf83",
+          "45630b0a-0177-41e1-910d-e8fd6ce44880",
+          "055a9bc7-f3fa-441d-8ee9-3a46a6635d04",
+          "961de6cb-46de-4f7b-b33b-b50892750c73",
+          "c66d557f-fda3-4a95-aebb-ba8e9b1d8a67",
+          "d4665234-9c2b-40a3-bb18-d9f5fb34baba",
+          "1e935ac1-9bb8-4037-a412-9c4023adcf64",
+          "5fb6d10a-f3c7-4f7b-b3be-75239602e258",
+          "65006463-c9e2-4abe-81ef-dc20c3970a43",
+          "00b9e175-e386-45ef-9cc1-fce60644c6c9",
+          "04f6a5c3-8ce7-4cc8-abb0-2ce5c815a972",
+          "ef0da6a4-e324-4208-a152-5b6bbf7c2722",
+          "69e00dac-ae41-441c-9565-7c63321d7059"
         ],
         "settings": {
           "transparent-menu": false,
           "header-account-show": true,
           "cart--icon": "bag",
           "header-menu-center": true,
-          "menu": "custom-megamenu-blockshop",
+          "menu": "main-menu-1",
           "megamenu_layout": "custom",
           "menu_width": true,
           "column_divider": true,
@@ -259,21 +274,21 @@
             "type": "about",
             "settings": {
               "about-title": "",
-              "text": "<p>© Architect & Fairies LLC 2022<\/p>",
+              "text": "<p>© ARCHITECTS & FAIRIES LLC 2022<\/p>",
               "subscribe--show-social-icons": true
             }
           },
           "footer--menu": {
             "type": "menu",
             "settings": {
-              "menu-title": "Info",
+              "menu-title": "INFO",
               "menu": "footer"
             }
           },
           "footer--subscribe": {
             "type": "subscribe",
             "settings": {
-              "newsletter--heading": "Subscribe",
+              "newsletter--heading": "SUBSCRIBE",
               "newsletter--info": "<p>Sign up to our mailing list<\/p>",
               "subscribe--show-newsletter": true
             }

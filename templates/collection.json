@@ -5,10 +5,7 @@
       "blocks": {
         "1662419061a2ca315e-0": {
           "type": "image",
-          "disabled": true,
           "settings": {
-            "image": "{{ collection.metafields.banner.image.value }}",
-            "image_mobile": "{{ collection.metafields.banner.image_mobile.value }}",
             "overline": "",
             "title": "",
             "description": "",
@@ -51,6 +48,7 @@
     },
     "collection-header": {
       "type": "collection--header",
+      "disabled": true,
       "settings": {
         "enable-header": false,
         "show-title": true,
@@ -130,7 +128,7 @@
       "settings": {
         "container-width": 3,
         "products-per-row--desktop": 4,
-        "products-per-row--mobile": "1",
+        "products-per-row--mobile": "2",
         "number-of-rows": 4
       }
     },

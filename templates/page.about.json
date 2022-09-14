@@ -2,6 +2,7 @@
   "sections": {
     "16324732604d3e7054": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "text-color": "auto",
         "background-color": "none",
@@ -36,6 +37,7 @@
     },
     "16324732989269ca2c": {
       "type": "featured-text",
+      "disabled": true,
       "settings": {
         "background-color": "none",
         "light-text": false,
@@ -49,6 +51,7 @@
     },
     "163247330191cc65e8": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "text-color": "auto",
         "background-color": "none",
@@ -72,6 +75,7 @@
     },
     "1632473305029b8e81": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "text-color": "auto",
         "background-color": "none",
@@ -95,6 +99,7 @@
     },
     "1632473398c42b6136": {
       "type": "featured-video",
+      "disabled": true,
       "settings": {
         "video-url": "",
         "full-width": false,

@@ -16,8 +16,9 @@
     aria-label="{{ product_rating_t }}"
     style="--rating: {{ rating_integer }}; --rating-max: {{ rating_max }}; --rating-decimal: {{ rating_decimal }};"
   >
-    <a href="{{ product.url | append: '/#stamped-main-widget' }}">
-      <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-title="{{ product.title | escape }}" data-product-type="{{ product.type }}" style="display: block;">{{ product.metafields.stamped.badge }}</span>
-    </a>
+    <div class="product-rating--stars"></div>
+    <span class="product-rating--count" data-item="accent-text" aria-label="{{ total_reviews_t }}">
+      {{- reviews.rating_count -}}
+    </span>
   </div>
 {%- endif -%}

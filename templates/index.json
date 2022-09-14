@@ -6,8 +6,8 @@
         "c9c8b210-6728-4e38-a5ae-8b6fac5169b6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/infographic_banner_with_text.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/infographic_banner_with_text_mobile.jpg",
+            "image": "shopify:\/\/shop_images\/WHITE-_Infogram.png",
+            "image_mobile": "shopify:\/\/shop_images\/White-infogram-mobile.png",
             "overline": "",
             "title": "",
             "description": "",
@@ -192,14 +192,8 @@
           "settings": {
           }
         },
-        "b40f72f1-6eb8-4c6a-88fc-83086b4cbe9e": {
-          "type": "rating",
-          "settings": {
-          }
-        },
         "ca001b09-5657-47de-bfd3-05bc06f6d293": {
           "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/star-rating-badge\/a103faaf-2125-4b0e-89fa-de5149736723",
-          "disabled": true,
           "settings": {
             "use_metafields": false,
             "sku_tagtype": "handle",
@@ -242,7 +236,6 @@
       },
       "block_order": [
         "1660562785df06303e-1",
-        "b40f72f1-6eb8-4c6a-88fc-83086b4cbe9e",
         "ca001b09-5657-47de-bfd3-05bc06f6d293",
         "64c8f8df-ff92-4990-8d0e-f8b3a780f8f1",
         "1660562785df06303e-3",
@@ -257,7 +250,7 @@
         "container-width": 4,
         "spacing-above": false,
         "spacing-below": true,
-        "featured_product": "copy-strip-bath",
+        "featured_product": "copy-of-lash-bath-3-piece-set",
         "loop-enabled": false
       }
     },

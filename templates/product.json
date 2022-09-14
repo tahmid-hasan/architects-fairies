@@ -1,0 +1,164 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+          }
+        },
+        "a3586985-be52-4ce0-8abb-4bce7bc4c8df": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/star-rating-badge\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "use_metafields": true,
+            "sku_tagtype": "sku",
+            "is_featured_product": false,
+            "featured_product_handle": ""
+          }
+        },
+        "0beecd79-14d0-4192-aab5-58b3dbd38312": {
+          "type": "payment-terms",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "83286844-4c17-49d8-891f-892aea7c963c": {
+          "type": "quantity-input",
+          "settings": {
+          }
+        },
+        "options": {
+          "type": "options",
+          "settings": {
+            "variant-style": "buttons",
+            "swatches-enabled": true,
+            "size-chart-enabled": true,
+            "size-chart-option": "size",
+            "size-chart-content": "",
+            "field_name": "Bottle color, Are you a returning private label client?, Label color, Social Media"
+          }
+        },
+        "buy-buttons": {
+          "type": "buy-buttons",
+          "settings": {
+            "smart-payment-enabled": true
+          }
+        },
+        "vendor": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "pickup": {
+          "type": "pickup",
+          "settings": {
+          }
+        },
+        "thumbnails": {
+          "type": "thumbnails",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "divider": {
+          "type": "divider",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "f2781928-68dd-4068-b191-ba25582c599e": {
+          "type": "shopify:\/\/apps\/easy-faq-page-customer-faqs\/blocks\/app-block\/89f30064-d200-4f10-b92c-a16fc4c5815c",
+          "disabled": true,
+          "settings": {
+            "heading": "Frequently Asked Questions",
+            "heading_text_type": "h2",
+            "heading_alignment": "left",
+            "faq_embed_code": "<div class=\"ef-faqs-plus-app-cats-content\" data-category=\"LOGO FILE FAQS\" id=\"ef-faqs-60801fcc7d11b60017038082\"><\/div>",
+            "faqs_width": 100
+          }
+        },
+        "e724a62e-694e-4278-8adc-f92f289bce1f": {
+          "type": "faq-app",
+          "settings": {
+            "app_code": "<p>{{ product.metafields.product.faqs | metafield_tag }}<\/p>"
+          }
+        },
+        "b63f8e37-d1f4-45d3-ac16-b539a66ea798": {
+          "type": "quick-upsell",
+          "settings": {
+            "heading": "Match it with",
+            "products": "{{ product.metafields.custom.match_it_with.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "a3586985-be52-4ce0-8abb-4bce7bc4c8df",
+        "0beecd79-14d0-4192-aab5-58b3dbd38312",
+        "price",
+        "83286844-4c17-49d8-891f-892aea7c963c",
+        "options",
+        "buy-buttons",
+        "vendor",
+        "pickup",
+        "thumbnails",
+        "divider",
+        "description",
+        "f2781928-68dd-4068-b191-ba25582c599e",
+        "e724a62e-694e-4278-8adc-f92f289bce1f",
+        "b63f8e37-d1f4-45d3-ac16-b539a66ea798"
+      ],
+      "settings": {
+        "product-breadcrumbs-show": true,
+        "modal-enabled": true,
+        "image-zoom-enabled": true,
+        "loop-enabled": false
+      }
+    },
+    "product-share": {
+      "type": "product-share",
+      "settings": {
+        "enabled": true,
+        "twitter-enabled": true,
+        "facebook-enabled": true,
+        "pinterest-enabled": true
+      }
+    },
+    "1662873656b79eebb2": {
+      "type": "product-review",
+      "settings": {
+        "background-color": "none",
+        "light-text": false,
+        "container-width": 4,
+        "spacing-above": true,
+        "spacing-below": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show": true,
+        "title": "You may also like",
+        "container-width": 5,
+        "spacing-above": false,
+        "spacing-below": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-share",
+    "1662873656b79eebb2",
+    "recommendations"
+  ]
+}

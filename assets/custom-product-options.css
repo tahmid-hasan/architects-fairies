@@ -1,0 +1,103 @@
+input[type="checkbox"], input[type="radio"] {
+  display: none;
+}
+.checkbox-default input[type="checkbox"]+label{padding-left: 26px;position:relative;}
+.checkbox-default input[type="checkbox"]+label::before{
+  content:"";
+  position:absolute;
+  top:6px;
+  left:0;
+  height:16px;
+  width:16px;
+  border:2px solid #A4A4A4;
+  border-radius: 2px;
+}
+.checkbox-default input[type="checkbox"]:checked+label::before{
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.125 16H1.875C0.841064 16 0 15.1589 0 14.125V1.875C0 0.841064 0.841064 0 1.875 0H14.125C15.1589 0 16 0.841064 16 1.875V14.125C16 15.1589 15.1589 16 14.125 16ZM1.875 1.25C1.5304 1.25 1.25 1.5304 1.25 1.875V14.125C1.25 14.4696 1.5304 14.75 1.875 14.75H14.125C14.4696 14.75 14.75 14.4696 14.75 14.125V1.875C14.75 1.5304 14.4696 1.25 14.125 1.25H1.875Z' fill='%23A4A4A4'/%3E%3Cpath d='M14.125 16H1.875C0.841064 16 0 15.1589 0 14.125V1.875C0 0.841064 0.841064 0 1.875 0H14.125C15.1589 0 16 0.841064 16 1.875V14.125C16 15.1589 15.1589 16 14.125 16Z' fill='%2330322F'/%3E%3Cpath d='M13.4655 4.72949L12.5342 3.89551L6.75403 10.3507L3.39929 7.16174L2.53809 8.06763L6.82617 12.144L13.4655 4.72949Z' fill='white'/%3E%3C/svg%3E");
+  border:0px;
+}
+.checkbox-button input[type="checkbox"]+label, .checkbox-button input[type="radio"]+label {
+  display: inline-flex;
+  border: solid 2px #E0E0E0;
+  cursor: pointer;
+  text-transform: none;
+  
+  height: fit-content;
+}
+
+@media only screen and (max-width: 767px) {
+  .featured--product .featured-product--block{text-align:left;}
+  .featured--product .product-price--root{align-items:flex-start;}
+}
+@media only screen and (max-width: 767px) {
+  .checkbox-button input[type="checkbox"]+label, .checkbox-button input[type="radio"]+label{margin-right:10px;margin-bottom:10px;}
+  .checkbox-button input[type="checkbox"]+label, .checkbox-button input[type="radio"]+label, select {
+    font-size: 11px;
+    padding: 10px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .checkbox-button input[type="checkbox"]+label, .checkbox-button input[type="radio"]+label{margin-right: 16px;margin-bottom: 16px;}
+  .checkbox-button input[type="checkbox"]+label, .checkbox-button input[type="radio"]+label, select {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+.checkbox-button input[type="checkbox"]:checked+label, .checkbox-button input[type="radio"]:checked+label {
+  border: 2px solid #30322F;
+}
+[data-field-id].product-options-control-container.checkbox-button {
+  display: flex;
+  flex-wrap: wrap;
+}
+[data-field-id].product-options-control-container .product-options-field-name {
+  flex: 1 1 100%;
+  margin-bottom: 10px;
+}
+input[type="file"]+label.custom_file_upload_label:not(.featured--product-select input[type="file"]+label.custom_file_upload_label){max-width: 445px;}
+input[type="file"]+label.custom_file_upload_label {
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: #FFE3CC;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  cursor: pointer;
+  margin-top: 1rem;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+input[type="file"]+label.custom_file_upload_label span.underline_text {
+  display: inline-block;
+  text-decoration: underline;
+}
+.product-options-price-info, .product-options-price-info .pricing-info-header {
+  border-radius: 0;
+}
+.product-options-price-info .pricing-info-total {
+  position: relative;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.6;
+}
+.product-options-price-info .pricing-info-total::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 20px);
+  border-bottom: 1px solid #30322F;
+}
+.product-options-price-info .pricing-info-header,
+.product-options-price-info .pricing-info-total,
+.product-options-price-info .pricing-info-total .pricing-info-total-price,
+.pricing-info-product .pricing-info-product-title {
+  font-size: 14px;
+  text-align: left;
+}
+.product-options-price-info .pricing-info-total,
+.pricing-info-product .pricing-info-product-title {
+  opacity: 0.6;
+}

@@ -1,0 +1,376 @@
+{%- liquid
+  assign bg_color = section.settings.background-color
+  assign bg_height = section.settings.background-height
+  assign bg_opacity = section.settings.background-opacity
+  assign container_width = section.settings.container-width
+  assign light_text = section.settings.light-text
+  assign spacing_above = section.settings.spacing-above
+  assign spacing_below = section.settings.spacing-below
+  assign heading = section.settings.heading
+
+  capture app_blocks
+    for block in section.blocks
+      render block
+    endfor
+  endcapture
+-%}
+
+{% style %}
+.apps--root {
+  position: relative;
+}
+.stamped-review-section .apps--root::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: {{ bg_height | append: '%' }};
+  background: {{ bg_color }};
+  opacity: {{ bg_opacity }};
+  z-index: 1;
+}
+.content--wrapper {
+  position: relative;
+  z-index: 2;
+}
+.review--data {
+  display: none !important;
+}
+.stamped-review-section .apps--root .content--wrapper {
+  max-width: unset;
+}
+.slider-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  padding-bottom: 15px;
+}
+.slider-control {
+  display: flex;
+  right: 0;
+  align-items: center;
+}
+.slider-control--prev, .slider-control--next {
+  display: flex;
+  align-items: center;
+}
+.slider-control--prev {
+  margin-right: 10px;
+}
+.slider-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #30322F;
+  opacity: 0.2;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+.review-count {
+  margin: 0;
+}
+.slider-container {
+  margin-top: 36px;
+}
+.swiper {
+  padding: 24px;
+  margin: -24px;
+}
+.review-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 16px;
+  background: #FFFFFF;
+  box-shadow: 4px 6px 10px -8px rgba(0, 0, 0, 0.25);
+}
+.review-image {
+  height: 100%;
+}
+.review-image * {
+  display: block;
+}
+.review-image a {
+  width: 100%;
+  height: 100%;
+}
+.review-image img {
+  width: 100%;
+  height: 100%;
+}
+.stamped-reviews-title {
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.stamped-reviews-message .stamped-reviews-message-block {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  min-height: 72px;
+}
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+}
+.stamped-reviews-author {
+  font-weight: 600;
+}
+.stamped-reviews-rating {
+  font-size: 25px;
+}
+.stamped-reviews-rating i {
+  color: #30322f !important
+}
+.swiper-lazy {
+  visibility: hidden;
+  opacity: 0;
+}
+.swiper-lazy.swiper-lazy-loaded {
+  visibility: visible;
+  opacity: 1;
+  transition: fade-in 1s cubic-bezier(.26,.54,.32,1) 0s;
+}
+.swiper-lazy-preloader {
+  display: none;
+}
+@keyframes fade-in{
+  0%{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+.stamped-reviews-section-heading[data-item="section-heading"] {
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+
+}
+.stamped-reviews-section-heading[data-item="section-heading"], .review-count {
+  color: #30322F;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0;
+  margin: -16px 0;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #30322F;
+}
+/* .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next,
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  transform: scale(1)
+} */
+@media only screen and (max-width:767px){
+  .stamped-reviews-section-heading[data-item="section-heading"] {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .review-count {
+    font-size: 18px;  
+  }
+  .review-count .count--text {
+    font-size: 12px;
+  }
+  .review-card {
+    gap: 10px;
+  }
+  .stamped-review-section .apps--root .content--wrapper {
+    margin: 0;
+    padding-top: 30px;
+  }
+  .review-image {
+    max-width: 120px;
+    width: 120px;
+  }
+  .stamped-reviews-title {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+  .stamped-reviews-title, .stamped-reviews-message {
+    margin-bottom: 10px;
+  }
+  .review-card--bar {
+    margin: 10px 0px;
+  }
+  .stamped-reviews-message, .stamped-reviews-author, .stamped-reviews-date {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+  .stamped-reviews-message .stamped-reviews-message-block {
+    min-height: 42px;
+  }
+  .swiper-pagination {
+    display: block;
+  }
+}
+@media only screen and (min-width:768px){
+  .stamped-reviews-section-heading[data-item="section-heading"] {
+    font-size: 24px;
+    margin-bottom: 75px;
+  }
+  .review-count {
+    font-size: 24px;  
+  }
+  .review-count .count--text {
+    font-size: 14px;
+  }
+  .review-card {
+    gap: 20px;
+  }
+  .stamped-review-section .apps--root .content--wrapper {
+    margin: 0 84px;
+    padding-top: 60px;
+  }
+  .review-image {
+    max-width: 180px;
+    width: 180px;
+  }
+  .stamped-reviews-title {
+    font-weight: 12px;
+  }
+  .stamped-reviews-title, .stamped-reviews-message {
+    margin-bottom: 16px;
+  }
+  .review-card--bar {
+    margin: 16px 0px;
+  }
+  .stamped-reviews-message, .stamped-reviews-author, .stamped-reviews-date {
+    font-size: 14px;
+  }
+  .swiper-pagination {
+    display: none;
+  }
+}
+{% endstyle %}
+
+<stamped-reviews>
+  <div class="review--data">
+    <div class="apps--wrapper">
+      {{ app_blocks }}
+    </div>
+  </div>
+  <div
+    class="apps--root"
+    data-section-id="{{ section.id }}"
+    data-background-color="{{ bg_color }}"
+    data-container-width="{{ container_width }}"
+    data-light-text="{{ light_text }}"
+    data-spacing-above="{{ spacing_above }}"
+    data-spacing-below="{{ spacing_below }}"
+  >
+    <div class="content--wrapper">
+      {%- if heading != blank -%}
+        <h2 class="stamped-reviews-section-heading" data-item="section-heading">
+          {{ heading }}
+        </h2>
+      {%- endif -%}
+      <div class="review-slider--wrapper">
+        <div class="slider-header">
+          <h3 class="review-count stamped-carousel-title stamped-style-color-title"></h3>
+          <div class="slider-control">
+            <span class="slider-control--prev">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#30322F"/>
+                <path d="M12 15L7 10L12 5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="slider-control--next">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#30322F"/>
+                <path d="M8 15L13 10L8 5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>                  
+            </span>
+          </div>
+        </div>
+        <div class="slider-container">
+          <div class="swiper">
+            <div class="swiper-wrapper"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</stamped-reviews>
+{% schema %}
+  {
+    "name": "Stamped Review",
+    "class": "stamped-review-section",
+    "max_blocks": 1,
+    "settings": [
+      {
+        "id": "background-color",
+        "label": "Background color",
+        "type": "color_background"
+      },
+      {
+        "id": "background-height",
+        "label": "Background height",
+        "type": "range",
+        "min": 30,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "default": 60
+      },
+      {
+        "id": "background-opacity",
+        "label": "Background opacity",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.1,
+        "default": 0.8
+      },
+      {
+        "id": "light-text",
+        "label": "Use light text color",
+        "type": "checkbox",
+        "default": false
+      },
+      {
+        "id": "container-width",
+        "label": "Width of container",
+        "type": "range",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Text columns with images"
+      },
+      {
+        "id": "spacing-above",
+        "label": "Spacing above",
+        "type": "checkbox",
+        "default": true
+      },
+      {
+        "id": "spacing-below",
+        "label": "Spacing below",
+        "type": "checkbox",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Stamped Review"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,139 @@
+{%- liquid
+  assign zoom = false
+  assign pagination = false
+  assign navigation = false
+  assign thumb = false
+  if zoom_active
+    assign zoom = true
+  endif
+  if show_pagination == true
+    assign pagination = true
+  endif
+  if show_navigation == true
+    assign navigation = true
+  endif
+  if thumb_active == true
+    assign thumb = true
+  endif
+-%}
+{% style %}
+  .product--media-slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+  {% if pagination == true %}
+    .product--media-slider-container {
+      padding-bottom: 24px;
+    }
+  {% endif %}
+  .product--media-slider-container .swiper {
+    z-index: 1;
+  }
+  .product--media-slider-container .slide--prev-btn,
+  .product--media-slider-container .slide--next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    display: none;
+  }
+  .product--media-slider-container .slide--prev-btn {
+    left: 16px;
+  }
+  .product--media-slider-container .slide--next-btn {
+    right: 16px;
+  }
+  .product--media-slider-container .swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: flex;
+    bottom: 16px;
+    justify-content: center;
+  }
+  .thumb--slider {
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    .product--media-slider-container .slide--prev-btn,
+    .product--media-slider-container .slide--next-btn {
+      display: flex;
+    }
+    .thumb--slider {
+      margin-top: 20px;
+    }
+  }
+{% endstyle %}
+<div class="product--media-slider-container">
+  <product-media-slider data-show-pagination="{{ pagination }}" data-show-navigation="{{ navigation }}" data-zoom-active="{{ zoom }}" data-thumb-active="{{ thumb }}">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% for media in product.media %}
+          {% case media.media_type %}
+            {% when 'image' %}
+            {% assign image = media %}
+            <div class="swiper-slide swiper-no-swiping">
+              {% if zoom == true %}
+                <modal-root class="modal--root" data-modal-view="product-media">
+                  {% if modal_enabled and media.media_type == 'image' %}
+                    <div class="modal--link">
+                      {% render 'product--media', media_view: "featured", inside_carousel: false, image_zoom_enabled: true, product_media: media, video_looping_enabled: true %}
+                    </div>
+                  {% endif %}
+                  {% if modal_enabled %}
+                    <div class="product-page--modal-media">
+                      {% if media.media_type == 'image' %}
+                        <div class="modal--content">
+                          {% render 'image', image: media.preview_image %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {% comment %} <div class="swiper-zoom-container">
+                  <img class="" src="{{ image | img_url: 'master' }}" height="auto" width="auto" loading="lazy">  
+                </div> {% endcomment %}
+                </modal-root>
+              {% else %}
+                <img class="" src="{{ image | img_url: 'master' }}" height="auto" width="auto" loading="lazy">
+              {% endif %}
+              {% comment %}
+              <img class="" src="{{ image | img_url: 'master' }}" height="auto" width="auto" loading="lazy">
+              {% endcomment %}
+            </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    {% if show_navigation == true %}
+    <span class="slide--prev-btn">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="17.5" fill="white" stroke="#A4A4A4"/>
+        <path d="M20 23L15 18L20 13" stroke="#30322F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="slide--next-btn">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle r="17.5" transform="matrix(-1 0 0 1 18 18)" fill="white" stroke="#A4A4A4"/>
+        <path d="M16 23L21 18L16 13" stroke="#30322F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    {% endif %}
+    {% if show_pagination == true %}
+    <div class="swiper-pagination"></div>
+    {% endif %}
+
+    {% if thumb == true %}
+      <div class="thumb--slider">
+        <div class="swiper-wrapper">
+          {% for media in product.media %}
+            {% case media.media_type %}
+              {% when 'image' %}
+              {% assign image = media %}
+              <div class="swiper-slide">
+                {% render 'image', image: media.preview_image %}
+              </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </product-media-slider>
+</div>

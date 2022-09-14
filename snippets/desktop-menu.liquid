@@ -1,0 +1,209 @@
+<style>
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  [data-full-width="false"] .sub-nav{position:relative;}
+  .sub-nav {
+    cursor: default;
+    z-index: 1004;
+    text-align: center;
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .sub-nav > li {
+    padding: 16px;
+  }
+  .sub-nav > li > a {
+    position: relative;
+    z-index: 510;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  [data-full-width="true"] .sub-nav > li > div{top: 78px;left:-48px;width:calc(100vw - 17px);padding:16px;}
+  [data-full-width="false"] .sub-nav > li > div{top: 62px;}
+  .sub-nav > li > div {
+    position: absolute;
+    display: block;
+    width: 100%;
+    left: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    background: var(--color-header-bg);
+    border-radius: 0 0 3px 3px;
+    -webkit-transition: all 0.3s ease 0.15s;
+    -o-transition: all 0.3s ease 0.15s;
+    transition: all 0.3s ease 0.15s;
+    z-index: -1005;
+  }
+  .sub-nav > li > div .image--root{display:none;}
+  .sub-nav > li > a > .icon--chevron-down{display:inline;}
+  .sub-nav > li:hover > a > .icon--chevron-down {
+    display: none;
+  }
+  .sub-nav > li > a > .icon--chevron-up{display:none;}
+  .sub-nav > li:hover > a > .icon--chevron-up{display:inline;}
+  .sub-nav > li:hover > div {opacity: 1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";visibility: visible;box-shadow: 0 10px 10px -2px #0003;z-index:3;}
+  .sub-nav > li:hover > div .image--root{display:block;}
+  .mega-menu-container{padding-top:16px;padding-right:1px;padding-bottom:16px;}
+  .mega-menu-grid{max-height:55vh;overflow:auto;}
+  .mega-menu-grid::-webkit-scrollbar {
+    width: 5px;
+  }
+  .mega-menu-grid::-webkit-scrollbar-track {}
+  .mega-menu-grid::-webkit-scrollbar-thumb {
+    background-color: rgba(34,34,34,0.5);
+    border-radius: 20px;
+  }
+  {% comment %} rgba(96,100,94,0.5) {% endcomment %}
+  .mega-menu-grid {display: flex;justify-content: space-between;position:relative;flex-wrap:wrap;row-gap: 30px;}
+  
+  .mega-menu-grid > * {text-align: left;}
+  .collection-item {background:var(--color-header-bg);line-height:1.5rem;padding:0px 20px 0px 5px;margin:0;}
+  .collection-2{padding-left:16px;}
+  .collection-2 .collection-item {
+    line-height:1.2rem;
+    padding:5px 0;
+  }
+  .column--title{margin-bottom:16px;padding-bottom:5px;font-weight:600;position:relative;}
+  .column--title.underline--header::after{
+    content:"";
+    position:absolute;
+    height:1px;
+    width:100%;
+    background: #E0E0E0;
+    bottom:0;
+    left:0;
+  }
+  .parent--link{font-weight:600;}
+  .sub-nav-column{padding:0 16px;position:relative;}
+
+  .column--divider [data-mega-column] .sub-nav-column::after,
+  .column--divider [data-mega-column] .sub-nav-column::after,
+  .column--divider [data-mega-column] .sub-nav-column::after,
+  .column--divider [data-mega-column] .sub-nav-column::after,
+  .column--divider [data-mega-column] .sub-nav-column::after,
+  .column--divider [data-mega-column] .sub-nav-column::after{
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    background: #E0E0E0;
+  }
+  .column--divider [data-mega-column="1"] .sub-nav-column:nth-child(1)::after{content:none;}
+  .column--divider [data-mega-column="2"] .sub-nav-column:nth-child(2)::after{content:none;}
+  .column--divider [data-mega-column="3"] .sub-nav-column:nth-child(3)::after{content:none;}
+  .column--divider [data-mega-column="4"] .sub-nav-column:nth-child(4)::after{content:none;}
+  .column--divider [data-mega-column="5"] .sub-nav-column:nth-child(5)::after{content:none;}
+  .column--divider [data-mega-column="6"] .sub-nav-column:nth-child(6)::after{content:none;}
+  .column--divider [data-mega-column="7"] .sub-nav-column:nth-child(6)::after{content:none;}
+  .column--divider [data-mega-column="7"] .sub-nav-column:nth-child(7)::after{content:none;}
+  .column--divider [data-mega-column="8"] .sub-nav-column:nth-child(6)::after{content:none;}
+  .column--divider [data-mega-column="8"] .sub-nav-column:nth-child(8)::after{content:none;}
+  .column--divider [data-mega-column="9"] .sub-nav-column:nth-child(6)::after{content:none;}
+  .column--divider [data-mega-column="9"] .sub-nav-column:nth-child(9)::after{content:none;}
+  .column--divider [data-mega-column="10"] .sub-nav-column:nth-child(6)::after{content:none;}
+  .column--divider [data-mega-column="10"] .sub-nav-column:nth-child(10)::after{content:none;}
+  .column--divider [data-mega-column="11"] .sub-nav-column:nth-child(6)::after{content:none;}
+  .column--divider [data-mega-column="11"] .sub-nav-column:nth-child(11)::after{content:none;}
+  .column--divider [data-mega-column="12"] .sub-nav-column:nth-child(6)::after{content:none;}
+  .column--divider [data-mega-column="12"] .sub-nav-column:nth-child(12)::after{content:none;}
+  
+
+
+  [data-mega-column="1"] .sub-nav-column{flex:1 1 100%;max-width:100%;}
+  [data-mega-column="2"] .sub-nav-column{flex:1 1 50%;max-width:50%;}
+  [data-mega-column="3"] .sub-nav-column{flex:1 1 33.333333%;max-width:33.333333%;}
+  [data-mega-column="4"] .sub-nav-column{flex:1 1 25%;max-width:25%;}
+  [data-mega-column="5"] .sub-nav-column{flex:1 1 20%;max-width:20%;}
+  [data-mega-column="6"] .sub-nav-column,
+  [data-mega-column="7"] .sub-nav-column,
+  [data-mega-column="8"] .sub-nav-column,
+  [data-mega-column="9"] .sub-nav-column,
+  [data-mega-column="10"] .sub-nav-column,
+  [data-mega-column="11"] .sub-nav-column,
+  [data-mega-column="12"] .sub-nav-column{flex: 1 1 16.6666667%;max-width: 16.6666667%;}
+
+  [data-mega-column="7"] .sub-nav-column:nth-child(7){flex:1 1 100%;max-width:100%;}
+  [data-mega-column="8"] .sub-nav-column:nth-child(7),
+  [data-mega-column="8"] .sub-nav-column:nth-child(8){flex:1 1 50%;max-width:50%;}
+  [data-mega-column="9"] .sub-nav-column:nth-child(7),
+  [data-mega-column="9"] .sub-nav-column:nth-child(8),
+  [data-mega-column="9"] .sub-nav-column:nth-child(9){flex:1 1 33.333333%;max-width:33.333333%;}
+  [data-mega-column="10"] .sub-nav-column:nth-child(7),
+  [data-mega-column="10"] .sub-nav-column:nth-child(8),
+  [data-mega-column="10"] .sub-nav-column:nth-child(9),
+  [data-mega-column="10"] .sub-nav-column:nth-child(10){flex:1 1 25%;max-width:25%;}
+  [data-mega-column="11"] .sub-nav-column:nth-child(7),
+  [data-mega-column="11"] .sub-nav-column:nth-child(8),
+  [data-mega-column="11"] .sub-nav-column:nth-child(9),
+  [data-mega-column="11"] .sub-nav-column:nth-child(10),
+  [data-mega-column="11"] .sub-nav-column:nth-child(11){flex:1 1 20%;max-width:20%;}
+  .mega-menu-container a{transition:opacity 0.2s ease-in-out;}
+  .mega-menu-container a:not(a.image--link):hover{color:#222222;font-weight:600;opacity:0.6}
+</style>
+<div id="mega-menu" class="hide-on-med-and-down{% if section.settings.column_divider == true %} column--divider{% endif %}" data-item="nav-text" class="x-menu" data-handle="{{ handle }}" data-full-width="{{ section.settings.menu_width }}">
+
+  <ul class="sub-nav">
+    <!-- Top level li a should not have a link this is where the user clicks to open the mega menu on a tablet or touch screen-->
+    {% for link in linklists[handle].links %}
+    <li>
+      {%- liquid
+        assign col_count = 0
+        assign column = ''
+        assign mega_container = ''
+        for block in blocks
+          assign menu_text = link.title | handle
+          assign heading = block.settings.heading | handle
+          if heading == menu_text
+            assign col_count = col_count | plus: 1
+            capture column
+              echo column
+              render 'sub-nav-column', block: block
+            endcapture
+          endif
+        endfor
+        if col_count > 0 and col_count < 13
+          assign menu_grid_html = '<div class="mega-menu-grid" data-mega-column="' | append: col_count | append: '">'
+          capture mega_container
+            echo '<div class="mega-menu-container">'
+              echo menu_grid_html
+                echo column
+              echo '</div>'
+            echo '</div>'
+          endcapture
+        endif
+      -%}
+      <a
+        href="{{ link.url }}"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="x-menu--sub-{{ link.handle }}">
+        <span>{{ link.title }}</span>
+        {% unless col_count == 0 %}
+          {% render 'icons', icon: 'chevron-down' %}
+          {% render 'icons', icon: 'chevron-up' %}
+        {% endunless %}
+      </a>
+      {{ mega_container }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>

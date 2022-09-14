@@ -1,0 +1,14 @@
+{% assign productTags = product.tags |  join:',' | downcase %}
+{% if productTags contains 'w3-product-customizer' %}
+ <div class="po-customizer-tab-wrapper">
+     <div class="po-customizer-tabs">
+         <a href="#tab-1" class="po-customizer-tab-1"><img src="https://productoptions.w3apps.co/images/live-preview.svg"><span>Live Preview</span></a>
+         <a href="#tab-2" class="po-customizer-tab-2 tab-active"><img src="https://productoptions.w3apps.co/images/photos.svg"><span>Product Photos</span></a>
+     </div>
+     <div class="po-customizer-tab-content">
+         <div class="live-preview-tab" style="display:none;">
+             <div class="product-options-image-customizer" data-product-id="{{ product.id }}"></div>
+         </div>
+     </div>
+ </div>
+{% endif %}

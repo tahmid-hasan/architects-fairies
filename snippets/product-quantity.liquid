@@ -1,0 +1,24 @@
+{%- assign quantity_t = 'products.quantity' | t -%}
+
+<product-quantity-root class="quantity-input-wrapper">
+  <div class="product-quantity--root">
+    <a class="product-quantity--minus" data-item="minus" tabindex="0" aria-label="Minus">
+      {% render 'icons', icon: 'minus' %}
+    </a>
+    <label for="{{ id }}--quantity">
+      {{ quantity_t }}
+    </label>
+    <input
+      class="product-quantity--input"
+      id="{{ id }}--quantity"
+      type="number"
+      form="{{ id }}"
+      name="quantity"
+      min="1"
+      value="1"
+    />
+    <a class="product-quantity--plus" data-item="plus" tabindex="0" aria-label="Plus">
+      {% render 'icons', icon: 'plus' %}
+    </a>
+  </div>
+</product-quantity-root>

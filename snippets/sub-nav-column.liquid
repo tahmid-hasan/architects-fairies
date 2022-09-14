@@ -1,0 +1,44 @@
+{%- liquid
+  assign menu = block.settings.menu
+  assign image = block.settings.image
+  assign title = block.settings.title
+  assign linked_to = block.settings.linked_to
+  assign underline_heading = block.settings.underline_column_heading
+-%}
+{% unless image %}
+  {% unless menu == blank %}
+    <div class="sub-nav-column">
+      {% if title != '' %}
+        <h3 class="column--title{% if underline_heading == true %} underline--header{% endif %}"><a href="{{ linked_to }}">{{ title }}</a></h3>
+      {% endif %}
+      <ul class="collection">
+        {% assign links = linklists[menu].links %}
+
+        {% for link in links %}
+          <li class="collection-item" data-title="{{links.title}}">
+            <a class="parent--link" href="{{ link.url }}">{{ link.title }}</a>
+            {% if link.links != blank %}
+              {% assign list_lvl_2 = link.handle %}
+              <ul class="collection-2">
+                {% for child in linklists[list_lvl_2].links %}
+                <li class="collection-item">
+                  <a href="{{ child.url }}">{{ child.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endunless %}
+{% else %}
+  <div class="sub-nav-column">
+    {% if title != '' %}
+      <h3 class="column--title{% if underline_heading == true %} underline--header{% endif %}"><a href="{{ linked_to }}">{{ title }}</a></h3>
+    {% endif %}
+    <a class="image--link" href="{{ linked_to }}">
+      {% render "image", image: image %}
+    </a>
+  </div>
+{% endunless %}

@@ -1,0 +1,463 @@
+{%- liquid
+  assign set_1_active = false
+  assign set_2_active = false
+  assign sub_total = cart.items_subtotal_price | divided_by: 100
+  if sub_total <= 50 and sub_total >= 5
+    assign set_1_active = true
+  endif
+  if sub_total > 50
+    assign set_2_active = true
+  endif
+
+  assign set_1_product_count = 0
+  if settings.set_1_product_1
+    assign set_1_product_count = set_1_product_count | plus: 1
+  endif
+  if settings.set_1_product_2
+    assign set_1_product_count = set_1_product_count | plus: 1
+  endif
+  if settings.set_1_product_3
+    assign set_1_product_count = set_1_product_count | plus: 1
+  endif
+  if settings.set_1_product_4
+    assign set_1_product_count = set_1_product_count | plus: 1
+  endif
+  if settings.set_1_product_5
+    assign set_1_product_count = set_1_product_count | plus: 1
+  endif
+  if settings.set_1_product_6
+    assign set_1_product_count = set_1_product_count | plus: 1
+  endif
+
+  assign set_2_product_count = 0
+  if settings.set_2_product_1
+    assign set_2_product_count = set_2_product_count | plus: 1
+  endif
+  if settings.set_2_product_2
+    assign set_2_product_count = set_2_product_count | plus: 1
+  endif
+  if settings.set_2_product_3
+    assign set_2_product_count = set_2_product_count | plus: 1
+  endif
+  if settings.set_2_product_4
+    assign set_2_product_count = set_2_product_count | plus: 1
+  endif
+  if settings.set_2_product_5
+    assign set_2_product_count = set_2_product_count | plus: 1
+  endif
+  if settings.set_2_product_6
+    assign set_2_product_count = set_2_product_count | plus: 1
+  endif
+
+  assign item_added_count=0
+-%}
+<div class="cart--recommendation{% if view == 'drawer' %} cart--recommendation-drawer{% endif %}" data-ids="{{ ids }}" {% if added %}data-remove{% endif %}>
+  {% if set_1_active and set_1_product_count > 0 %}
+    <div class="set--1" data-set-type="1">
+      <h3 class="block--heading">{{ settings.sample_set_1_heading }}</h3>
+      <div class="recommendation--product-grid">
+        {% if settings.set_1_product_1 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_1_product_1
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_1_product_2 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_1_product_2
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_1_product_3 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_1_product_3
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_1_product_4 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_1_product_4
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_1_product_5 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_1_product_5
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_1_product_6 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_1_product_6
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  {% if set_2_active and set_2_product_count > 0 %}
+    <div class="set--2" data-set-type="2">
+      <h3 class="block--heading">{{ settings.sample_set_2_heading }}</h3>
+      <div class="recommendation--product-grid">
+        {% if settings.set_2_product_1 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_2_product_1
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_2_product_2 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_2_product_2
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_2_product_3 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_2_product_3
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_2_product_4 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_2_product_4
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_2_product_5 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_2_product_5
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if settings.set_2_product_6 != blank %}
+          <div class="grid--item">
+            <div class="product--tiny-card">
+              {%- liquid
+                assign product = settings.set_2_product_6
+                assign id = product.id
+                assign current_variant = product.selected_or_first_available_variant
+                assign added = false
+                if ids contains current_variant.id
+                  assign added = true
+                  assign item_added_count=item_added_count | plus: 1
+                endif
+              %}
+              <div class="product--image">
+                {%
+                  render 'image',
+                  image: product.featured_image,
+                  full_width: true
+                %}
+              </div>
+              <div class="product--meta-wrap">
+                <h4 class="product--title">{{ product.title }}</h3>
+                <div data-item="button">
+                  <button class="product-buy-buttons--cta recommended--product-cta" data-id="{{ current_variant.id }}" {% if added %}data-remove{% endif %}>
+                    <span class="product-buy-buttons--cta-text">{% if added %}Remove{% else %}Add{% endif %}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  <script type="application/json" data-promo-product-ids>
+    {
+      "max_product":{"set_1":{{settings.sample_set_1_max_product}},"set_2":{{settings.sample_set_2_max_product}}},
+      "cart": {{ cart | json }},
+      "set_1": [
+        {% if settings.set_1_product_1 != blank %}{{ settings.set_1_product_1.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_1_product_2 != blank %}{{ settings.set_1_product_2.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_1_product_2 != blank %}{{ settings.set_1_product_3.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_1_product_4 != blank %}{{ settings.set_1_product_4.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_1_product_5 != blank %}{{ settings.set_1_product_5.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_1_product_6 != blank %}{{ settings.set_1_product_6.selected_or_first_available_variant.id }}{% else %}""{% endif %}
+      ],
+      "set_2": [
+        {% if settings.set_2_product_1 != blank %}{{ settings.set_2_product_1.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_2_product_2 != blank %}{{ settings.set_2_product_2.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_2_product_3 != blank %}{{ settings.set_2_product_3.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_2_product_4 != blank %}{{ settings.set_2_product_4.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_2_product_5 != blank %}{{ settings.set_2_product_5.selected_or_first_available_variant.id }},{% else %}"",{% endif %}
+        {% if settings.set_2_product_6 != blank %}{{ settings.set_2_product_6.selected_or_first_available_variant.id }}{% else %}""{% endif %}
+      ]
+    }
+  </script>
+</div>

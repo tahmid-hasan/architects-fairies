@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "navigation": {
+      "type": "search--navigation",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "search--body",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "navigation",
+    "main"
+  ]
+}

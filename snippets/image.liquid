@@ -1,0 +1,220 @@
+{%- liquid
+  unless image_url
+    assign image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
+    assign aspect_ratio = image.aspect_ratio
+  else
+    assign aspect_ratio = 1
+  endunless
+
+  unless preload
+    assign preload = false
+  endunless
+
+  unless widths
+    assign widths = '295,394,430,590,700,800,1000,1200,1500,1800,2000,2400'
+  endunless
+
+  assign widths = widths | split: ','
+
+  unless max_height
+    assign max_height = 0
+  endunless
+
+  unless full_width
+    assign full_width = false
+  endunless
+ 
+  capture bgset
+    for width in widths
+      assign image_width = width | append: 'x'
+      assign width_int = width | plus: 0
+      if image.width >= width_int
+        echo image | img_url: image_width | append: ' ' | append: width | append: 'w,'
+      endif
+    endfor
+  endcapture
+  assign bgset = bgset | strip_newlines | remove: '  '
+
+  capture valid_widths
+    for width in widths
+      assign width_int = width | plus: 0
+      if image.width >= width_int
+        echo width_int | append: ','
+      endif
+    endfor
+
+    if image.width <= 2400
+      echo image.width | downcase
+    endif
+  endcapture
+
+  assign widths = valid_widths | split: ',' | uniq | join: ','
+
+  assign lazy_classes = 'lazyload'
+  if preload
+    assign lazy_classes = lazy_classes | append: ' lazypreload'
+  endif
+
+  assign width = image.width | append: "px"
+  if max_height > 0
+    assign width = max_height | times: aspect_ratio | round: 2 | append: 'px'
+  elsif full_width
+    assign width = "100%"
+  endif
+-%}
+
+<div
+  class="image--root"
+  data-parallax="{{ parallax }}"
+  data-cover="{{ cover }}"
+  data-cover-mobile="{{ cover_mobile }}"
+  data-darken="{{ darken }}"
+  data-darken-mobile="{{ darken_mobile }}"
+  style="width: {{ width }};"
+  {{ custom_attributes }}
+>
+  {% if parallax %}
+    <div
+      style="padding-top:{{ 1 | divided_by: aspect_ratio | times: 100 }}%;"
+      data-expand="-150"
+      data-sizes="auto"
+      data-bgset="{{ bgset }}"
+    >
+    </div>
+
+  {% else %}
+    
+    {% if original_size == true %}
+      {% style %}
+        {% if image_mobile %}
+          #shopify-section-{{ section.id }} .image--container[data-image-id="{{ image.id }}"] {
+            padding-top: calc(100% * {{ 1 | divided_by: image_mobile.aspect_ratio }})
+          }
+          @media screen and (min-width: 429px) {
+            #shopify-section-{{ section.id }} .image--container[data-image-id="{{ image.id }}"] {
+              padding-top: calc(100% * {{ 1 | divided_by: image.aspect_ratio }})
+            }
+          }
+        {% else %}
+          #shopify-section-{{ section.id }} .image--container[data-image-id="{{ image.id }}"] {
+            padding-top: calc(100% * {{ 1 | divided_by: image_mobile.aspect_ratio }})
+          }
+        {% endif %}
+      {% endstyle %}
+    {% endif %}
+    <div
+      class="image--container"
+      data-image-id="{{ image.id }}"
+      {% unless original_size == true %}
+        style="padding-top:{{ 1 | divided_by: aspect_ratio | times: 100 }}%;"
+      {% endunless %}
+    >
+
+      <picture>
+        <!--[if IE 9]><video style="display: none"><![endif]-->
+        {% if image_mobile %}
+        <source data-srcset="{{ image_mobile | img_url: '295x' }} 295w,
+          {{ image_mobile | img_url: '394x' }} 394w,
+          {{ image_mobile | img_url: '428x' }} 428w" media="(max-width: 428px)" />
+        {% else %}
+        <source data-srcset="{{ image | img_url: '295x' }} 295w,
+          {{ image | img_url: '394x' }} 394w,
+          {{ image | img_url: '428x' }} 428w" media="(max-width: 428px)" />
+        {% endif %}
+        <source data-srcset="{{ image | img_url: '590x' }} 590w,
+          {{ image | img_url: '700x' }} 700w,
+          {{ image | img_url: '800x' }} 800w,
+          {{ image | img_url: '1000x' }} 1000w,
+          {{ image | img_url: '1200x' }} 1200w,
+          {{ image | img_url: '1500x' }} 1500w,
+          {{ image | img_url: '1800x' }} 1800w,
+          {{ image | img_url: '2000x' }} 2000w,
+          {{ image | img_url: '2400x' }} 2400w" />
+        <!--[if IE 9]></video><![endif]-->
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-src="{{ image_url }}"
+          class="lazyload"
+          alt="{{ image.alt | escape }}"
+          loading="lazy"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+        />
+      </picture>
+{% comment %}
+essential
+      <img
+        class="{{ lazy_classes }}"
+        data-src="{{ image_url }}"
+        data-sizes="auto"
+        data-widths="[{{ widths }}]"
+        alt="{{ image.alt | escape }}"
+        {% if image_mobile %}
+          data-srcset="
+            {{ image_mobile | img_url: '295x' }} 295w,
+            {{ image_mobile | img_url: '394x' }} 394w,
+            {{ image_mobile | img_url: '430x' }} 430w,
+            {{ image | img_url: '590x' }} 590w
+          "
+        {% endif %}
+      >
+{% endcomment %}
+
+{% comment %}
+<picture>
+	<!--[if IE 9]><video style="display: none"><![endif]-->
+	<source
+		data-srcset="240.jpg 240w,
+			320.jpg 320w,
+			500.jpg 500w"
+		media="(max-width: 550px)" />
+	<source
+			data-srcset="640.jpg 640w,
+				990.jpg 990w,
+				1024.jpg 1024w"
+			media="(max-width: 1024px)" />
+	<source
+			data-srcset="1200.jpg 1200w" />
+<!--[if IE 9]></video><![endif]-->
+<img
+		src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+		data-src="1024.jpg"
+		class="lazyload"
+		alt="image with artdirection" />
+</picture>
+
+
+
+
+
+
+<img
+	alt="house by the lake"
+	data-sizes="auto"
+	data-srcset="small.jpg 500w,
+		medium.jpg 640w,
+		big.jpg 1024w"
+	data-src="medium"
+	class="lazyload" />
+<img
+	alt="Jellyfish"
+	sizes="(min-width: 1000px) 930px, 90vw"
+	data-srcset="small.jpg 500w,
+		medium.jpg 640w,
+		big.jpg 1024w"
+	data-src="medium.jpg"
+	class="lazyload" />
+{% endcomment %}
+    </div>
+  {% endif %}
+
+  <noscript>
+    <img
+      src="{{ image | img_url: '1024x1024' }}"
+      alt="{{ image.alt | escape }}"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+      loading="lazy"
+    >
+  </noscript>
+</div>

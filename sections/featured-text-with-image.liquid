@@ -1,0 +1,177 @@
+{%- liquid
+  comment
+    Variables
+  endcomment
+  assign bg_color = section.settings.background-color
+  assign bg_image = section.settings.background-image
+  assign container_width = section.settings.container-width
+  assign heading = section.settings.heading | escape
+  assign overline = section.settings.overline | escape
+  assign spacing_above = section.settings.spacing-above
+  assign spacing_below = section.settings.spacing-below
+  assign text = section.settings.text
+-%}
+{%- style -%}
+.featured-text-with-image .featured-text--background {
+  background: url({{ bg_image | img_url: 'master' }});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.featured-text-with-image .featured-text--wrapper {
+  gap: 0;
+}
+.featured-text-with-image .featured-text--content {
+  background: #ffffff;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 0px 25px -6px rgba(0, 0, 0, 0.25);
+}
+.featured-text-with-image .featured-text--heading {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+.featured-text-with-image .featured-text--body {
+  line-height: 1.7;
+}
+@media only screen and (max-width:767px){
+  [data-section-id="{{ section.id }}"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  [data-section-id="{{ section.id }}"] .featured-text--background {
+    position: relative;
+    padding-top: calc(100% * {{ 1 | divided_by: bg_image.aspect_ratio }});
+    z-index: 1;
+  }
+  [data-section-id="{{ section.id }}"] .featured-text--content {
+    padding: 30px 16px;
+    margin: 0px 16px;
+    margin-top: -16px;
+  }
+  .featured-text-with-image .featured-text--body {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width:768px) {
+  .featured-text-with-image .featured-text--wrapper {
+    flex-direction: row;
+  }
+  .featured-text-with-image .featured-text--background {
+    width: 62%;
+    margin: 30px 0px;
+  }
+  .featured-text-with-image .featured-text--content {
+    max-width: 38%;
+    padding: 45px 16px;
+    margin-left: -16px;
+  }
+  .featured-text-with-image .featured-text--body {
+    font-size: 16px;
+  }
+}
+{%- endstyle -%}
+<div
+  class="featured-text--root"
+  data-section-id="{{ section.id }}"
+  data-background-color="{{ bg_color }}"
+  data-container-width="{{ container_width }}"
+  data-spacing-above="{{ spacing_above }}"
+  data-spacing-below="{{ spacing_below }}">
+  <div class="featured-text--wrapper">
+    <span class="featured-text--background"></span>
+    <div class="featured-text--content">
+      {% if overline != blank %}
+        <h3 class="featured-text--overline" data-item="overline">
+          {{ overline | escape }}
+        </h3>
+      {% endif %}
+  
+      {% if heading != blank %}
+        <h2 class="featured-text--heading" data-item="section-heading">
+          {{ heading }}
+        </h2>
+      {% endif %}
+  
+      <div class="featured-text--body" data-item="rte-content">
+        {{ text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rich text with image",
+  "class": "featured-text-with-image",
+  "settings": [
+    {
+      "id": "background-color",
+      "label": "Background color",
+      "type": "select",
+      "options": [
+        { "label": "None", "value": "none" },
+        { "label": "Light", "value": "light" },
+        { "label": "Dark", "value": "dark" },
+        { "label": "Accent", "value": "accent" }
+      ],
+      "default": "none"
+    },
+    {
+      "id": "background-image",
+      "label": "Background image",
+      "type": "image_picker"
+    },
+    {
+      "id": "container-width",
+      "label": "Width of container",
+      "type": "range",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "id": "spacing-above",
+      "label": "Spacing above",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "id": "spacing-below",
+      "label": "Spacing below",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "id": "overline",
+      "label": "Overline",
+      "type": "text",
+      "default": "Overline text"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Introduce your brand"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Introduce your brand, products and vision statement and welcome customers to your store.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text with image"
+    }
+  ]
+}
+{% endschema %}

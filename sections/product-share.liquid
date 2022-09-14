@@ -1,0 +1,109 @@
+{%- liquid
+  comment
+    Translations
+  endcomment
+
+  assign share_this = 'products.share_this' | t
+
+  comment
+    Variables
+  endcomment
+
+  assign enabled = section.settings.enabled
+  assign facebook_enabled = section.settings.facebook-enabled
+  assign pinterest_enabled = section.settings.pinterest-enabled
+  assign twitter_enabled = section.settings.twitter-enabled
+
+  capture share_url
+    echo shop.url | append: product.url
+  endcapture
+-%}
+
+{% if enabled %}
+  <div
+    class="product-share--root"
+    data-section-id="{{ section.id }}"
+    data-container="section"
+  >
+    <div class="product-share--header" data-container="block">
+      <h2 data-item="section-heading">
+        {{ share_this }}
+      </h2>
+    </div>
+
+    {% if twitter_enabled or facebook_enabled or pinterest_enabled %}
+      <div class="product-share--links" data-container="block">
+        {% if twitter_enabled %}
+          <a
+            class="product-share--twitter"
+            data-item="accent-text"
+            href="https://twitter.com/intent/tweet?text=Check%20out%20this%20product:+{{ share_url }}"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {% render 'icons', icon: 'twitter' %}
+            <span>Tweet</span>
+          </a>
+        {% endif %}
+
+        {% if facebook_enabled %}
+          <a
+            class="product-share--facebook"
+            data-item="accent-text"
+            href="https://www.facebook.com/sharer.php?u={{ share_url }}&t={{ product.title }}"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {% render 'icons', icon: 'facebook' %}
+            <span>Like</span>
+          </a>
+        {% endif %}
+
+        {% if pinterest_enabled %}
+          <a
+            class="product-share--pinterest"
+            data-item="accent-text"
+            href="https://pinterest.com/pin/create/button/?url={{ share_url }}&media={{ product.featured_media.preview_image | img_url: '2000x' }}&description={{ product.title | strip_html | escape | replace: ' ', '%20' }}"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {% render 'icons', icon: 'pinterest' %}
+            <span>Pin</span>
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Social sharing",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Enabled",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "twitter-enabled",
+      "label": "Share on Twitter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "facebook-enabled",
+      "label": "Share on Facebook",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "pinterest-enabled",
+      "label": "Share on Pinterest",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

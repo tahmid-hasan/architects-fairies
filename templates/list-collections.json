@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "list-collections",
+      "settings": {
+        "view": "collection-thumbnails",
+        "sort": "alphabetical",
+        "hide-collections": "All Products, ADD ON, 🖤, 🖤🖤, ADHESIVES, COMING SOON, PREMADE VOLUME FANS, STORE FEATURE, ORDERLYEMAILS-RECOMMENDED PRODUCTS, FREE SAMPLES, LASH TRIBE LASHES, LASH TRIBE LASHES SINGLE\/MIX TRAYS, LASH WEAR; LASHES, LASH TRIBE, LASH TRIBE ADHESIVES\/LIQUIDS, LASH WEAR, TWEEZERS, LASHES, APPLICATION TOOLS, BARE EDITION BRUSHES, CLEARANCE",
+        "spacing-above": true,
+        "spacing-below": true,
+        "heading": "COLLLECTIONS",
+        "text-style": "box",
+        "spacing": true,
+        "mobile-overlay": true,
+        "container-width": 3,
+        "width": 4,
+        "mobile-width": "1"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

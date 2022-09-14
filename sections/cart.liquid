@@ -1,0 +1,11 @@
+{%- liquid
+  render 'cart', view: 'desktop', section: section
+  render 'cart', view: 'mobile', section: section
+-%}
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": []
+}
+{% endschema %}

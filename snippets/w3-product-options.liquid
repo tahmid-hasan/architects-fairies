@@ -1,0 +1,66 @@
+{% if step == 'header_inject' %}
+  <style rel='text/css'>.options-hidden{display:none!important} .product-options-checkbox, .product-options-radiobutton{min-height:auto !important}</style>
+  <script type='text/javascript' src="{{ 'api.jquery.js' | shopify_asset_url }}" defer='defer'></script>
+{% endif %}
+
+{% if step == 'item_row_class' %}
+    {% if item.properties._options_group_id %}options-group group-id-{{ item.properties._options_group_id }}{% endif %}
+    {% if item.properties._options_hidden %} options-hidden{% endif %}
+{% endif %}
+
+{% if step == 'money_line' %}
+    {% if item.properties._options_group_id and item.properties._options_hidden == nil %}
+    {% assign guid = item.properties["_options_group_id"] %}
+    {% for item2 in cart.items %}
+        {% if item2.properties._options_hidden and item2.properties["_options_group_id"] == guid %}
+        <div class="options-additional-item">
+            + {{ item2.line_price | money }}
+        </div>
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+{% endif %}
+
+{% assign line_total = item.line_price %}
+
+{% if step == 'money_line_total' %}
+	{% if item.properties._options_group_id and item.properties._options_hidden == nil %}
+		{% assign guid = item.properties["_options_group_id"] %}
+		{% for item2 in cart.items %}
+			{% if item2.properties._options_hidden and item2.properties["_options_group_id"] == guid %}
+				{% assign line_total = line_total | plus:item2.line_price %} 
+			{% endif %} 
+		{% endfor %}
+		{{ line_total | money }}
+	{% else %}
+		{{ line_total | money }}
+	{% endif %}
+{% endif %}
+
+
+{%comment%}Product Options Display Snippet{%endcomment%}
+{% if step == 'widget' %}
+	<div style='width:100%;' class="w3-product-options" data-handle="{{ product.handle }}" data-tags="{{ product.tags | join: ", " | escape }}"></div>
+{% endif %}
+
+{%comment%}Remove Upcharge Items from Cart Count - This version does not multiply out quantity{%endcomment%}
+{% if step == 'cart_count' %}
+	{% assign w3_cart_count = 0 %}
+	{% for item in cart.items %} 
+		{% unless item.properties._options_hidden %} 
+			{% capture w3_cart_count %}{{ w3_cart_count | plus:1 }}{% endcapture %} 
+		{% endunless %}
+	{% endfor %}
+	{{ w3_cart_count }}
+{% endif %}
+
+{%comment%}Remove Upcharge Items from Cart Count - This version DOES multiply out quantity{%endcomment%}
+{% if step == 'cart_count2' %}
+	{% assign w3_cart_count = 0 %}
+	{% for item in cart.items %} 
+		{% unless item.properties._options_hidden %} 
+			{% assign w3_cart_count = w3_cart_count | plus:item.quantity %}
+		{% endunless %}
+	{% endfor %}
+	{{ w3_cart_count }}
+{% endif %}

@@ -12,7 +12,7 @@
   assign text = section.settings.text
 -%}
 {%- style -%}
-.featured-text-with-image .featured-text--background {
+#shopify-section-{{ section.id }}.featured-text-with-image .featured-text--background {
   background: url({{ bg_image | img_url: 'master' }});
   background-position: center;
   background-size: cover;

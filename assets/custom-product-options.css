@@ -1,8 +1,8 @@
 input[type="checkbox"], input[type="radio"] {
   display: none;
 }
-.checkbox-default input[type="checkbox"]+label{padding-left: 26px;position:relative;}
-.checkbox-default input[type="checkbox"]+label::before{
+.checkbox-default input[type="checkbox"]+label,.checkbox-default input[type="radio"]+label{padding-left: 26px;position:relative;}
+.checkbox-default input[type="checkbox"]+label::before,.checkbox-default input[type="radio"]+label::before{
   content:"";
   position:absolute;
   top:6px;
@@ -12,9 +12,14 @@ input[type="checkbox"], input[type="radio"] {
   border:2px solid #A4A4A4;
   border-radius: 2px;
 }
+.checkbox-default input[type="radio"]+label::before{border-radius:50%;}
 .checkbox-default input[type="checkbox"]:checked+label::before{
   background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.125 16H1.875C0.841064 16 0 15.1589 0 14.125V1.875C0 0.841064 0.841064 0 1.875 0H14.125C15.1589 0 16 0.841064 16 1.875V14.125C16 15.1589 15.1589 16 14.125 16ZM1.875 1.25C1.5304 1.25 1.25 1.5304 1.25 1.875V14.125C1.25 14.4696 1.5304 14.75 1.875 14.75H14.125C14.4696 14.75 14.75 14.4696 14.75 14.125V1.875C14.75 1.5304 14.4696 1.25 14.125 1.25H1.875Z' fill='%23A4A4A4'/%3E%3Cpath d='M14.125 16H1.875C0.841064 16 0 15.1589 0 14.125V1.875C0 0.841064 0.841064 0 1.875 0H14.125C15.1589 0 16 0.841064 16 1.875V14.125C16 15.1589 15.1589 16 14.125 16Z' fill='%2330322F'/%3E%3Cpath d='M13.4655 4.72949L12.5342 3.89551L6.75403 10.3507L3.39929 7.16174L2.53809 8.06763L6.82617 12.144L13.4655 4.72949Z' fill='white'/%3E%3C/svg%3E");
   border:0px;
+}
+.checkbox-default input[type="radio"]:checked+label::before{
+  background-color: #30322F;
+  border-radius: 50%;
 }
 .checkbox-button input[type="checkbox"]+label, .checkbox-button input[type="radio"]+label {
   display: inline-flex;

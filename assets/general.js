@@ -7,7 +7,6 @@ new class{
     document.head.querySelector(`link[href='${theme.assets.stylesheet}'][media]`).loaded?this.load():window.on("theme:styleSheet:loaded",()=>this.load())
   }
   load(){
-    console.log('onload func')
     document.body.setAttribute("data-assets-loaded",!0),
     document.documentElement.className=document.documentElement.className.replace("no-js","js"),
     window.trigger("theme:loaded")

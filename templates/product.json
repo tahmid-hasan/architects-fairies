@@ -8,13 +8,9 @@
           "settings": {
           }
         },
-        "a3586985-be52-4ce0-8abb-4bce7bc4c8df": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/star-rating-badge\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "14ce9432-b981-4765-8065-98c57408b299": {
+          "type": "product-review",
           "settings": {
-            "use_metafields": true,
-            "sku_tagtype": "sku",
-            "is_featured_product": false,
-            "featured_product_handle": ""
           }
         },
         "0beecd79-14d0-4192-aab5-58b3dbd38312": {
@@ -40,7 +36,7 @@
             "size-chart-enabled": true,
             "size-chart-option": "size",
             "size-chart-content": "",
-            "field_name": "Bottle color, Are you a returning private label client?, Label color, Social Media"
+            "field_name": "Bottle color, Are you a returning private label client?, Label color, Social Media, Do You Want to Customize This Product, Customized template color"
           }
         },
         "buy-buttons": {
@@ -97,7 +93,7 @@
       },
       "block_order": [
         "heading",
-        "a3586985-be52-4ce0-8abb-4bce7bc4c8df",
+        "14ce9432-b981-4765-8065-98c57408b299",
         "0beecd79-14d0-4192-aab5-58b3dbd38312",
         "price",
         "83286844-4c17-49d8-891f-892aea7c963c",
@@ -127,26 +123,6 @@
         "pinterest-enabled": true
       }
     },
-    "1655471918ff7ffe79": {
-      "type": "apps",
-      "blocks": {
-        "45dbdf65-f48e-49c1-8a3b-ffc50f71c058": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "45dbdf65-f48e-49c1-8a3b-ffc50f71c058"
-      ],
-      "settings": {
-        "background-color": "none",
-        "light-text": false,
-        "container-width": 4,
-        "spacing-above": true,
-        "spacing-below": true
-      }
-    },
     "recommendations": {
       "type": "product-recommendations",
       "disabled": true,
@@ -157,12 +133,25 @@
         "spacing-above": false,
         "spacing-below": true
       }
+    },
+    "16632334518f73b4e5": {
+      "type": "product-page-review",
+      "settings": {
+        "background-color": "",
+        "background-height": 60,
+        "background-opacity": 0.8,
+        "light-text": false,
+        "container-width": 4,
+        "heading": "Text columns with images",
+        "spacing-above": true,
+        "spacing-below": true
+      }
     }
   },
   "order": [
     "main",
     "product-share",
-    "1655471918ff7ffe79",
-    "recommendations"
+    "recommendations",
+    "16632334518f73b4e5"
   ]
 }

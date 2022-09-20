@@ -1,0 +1,97 @@
+{%- liquid
+  assign bg_color = section.settings.background-color
+  assign bg_height = section.settings.background-height
+  assign bg_opacity = section.settings.background-opacity
+  assign container_width = section.settings.container-width
+  assign light_text = section.settings.light-text
+  assign spacing_above = section.settings.spacing-above
+  assign spacing_below = section.settings.spacing-below
+  assign heading = section.settings.heading
+
+  capture app_blocks
+    for block in section.blocks
+      render block
+    endfor
+  endcapture
+-%}
+<div class="apps--root" data-section-id="{{ section.id }}" data-background-color="{{ bg_color }}" data-container-width="{{ container_width }}" data-light-text="{{ light_text }}" data-spacing-above="{{ spacing_above }}" data-spacing-below="{{ spacing_below }}">
+  <div class="product-page-reviews-section">
+    <div id="stamped-main-widget" class="stamped-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: "large" |replace: " ? ", " % 3F" | replace: "& "," % 26"}}" data-description="{{ product.description | escape }}" data-product-sku="{{product.handle}}" data-product-type="{{product.type}}"> {{ product.metafields.stamped.reviews }} </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Product reviews",
+    "class": "stamped-review-section",
+    "max_blocks": 1,
+    "settings": [
+      {
+        "id": "background-color",
+        "label": "Background color",
+        "type": "color_background"
+      },
+      {
+        "id": "background-height",
+        "label": "Background height",
+        "type": "range",
+        "min": 30,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "default": 60
+      },
+      {
+        "id": "background-opacity",
+        "label": "Background opacity",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.1,
+        "default": 0.8
+      },
+      {
+        "id": "light-text",
+        "label": "Use light text color",
+        "type": "checkbox",
+        "default": false
+      },
+      {
+        "id": "container-width",
+        "label": "Width of container",
+        "type": "range",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Text columns with images"
+      },
+      {
+        "id": "spacing-above",
+        "label": "Spacing above",
+        "type": "checkbox",
+        "default": true
+      },
+      {
+        "id": "spacing-below",
+        "label": "Spacing below",
+        "type": "checkbox",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Reviews"
+      }
+    ]
+  }
+{% endschema %}

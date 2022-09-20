@@ -32,11 +32,11 @@
   .product--media-slider-container .slide--prev-btn,
   .product--media-slider-container .slide--next-btn {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 12px);
     transform: translateY(-50%);
     z-index: 2;
     cursor: pointer;
-    display: none;
+    display:flex;
   }
   .product--media-slider-container .slide--prev-btn {
     left: 16px;
@@ -51,6 +51,12 @@
   }
   .thumb--slider {
     margin-top: 10px;
+  }
+  @media screen and (max-width: 767px){
+    .product--media-slider-container .slide--prev-btn svg, .product--media-slider-container .slide--next-btn svg{
+      width:30px;
+      height:30px;
+    }
   }
   @media screen and (min-width: 768px) {
     .product--media-slider-container .slide--prev-btn,

@@ -376,12 +376,7 @@
   {% endcapture %}
 {% endfor %}
 
-<cart-root
-  class="cart--root"
-  data-section-id="{{ section.id }}"
-  data-view="{{ view }}"
-  data-has-items="{{ has_items }}"
->
+<cart-root class="cart--root" data-section-id="{{ section.id }}" data-view="{{ view }}" data-has-items="{{ has_items }}">
   <div class="cart--header">
     <h1 class="cart--title" data-item="section-heading">{{ your_cart_t }}</h1>
   </div>

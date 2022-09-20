@@ -38,20 +38,20 @@
     "cart--type": "page",
     "cart--show-note": true,
     "sample_set_1_max_product": 2,
-    "sample_set_1_heading": "Get 2 free samples (If out of stock samples will be replaced at our discretion)",
+    "sample_set_1_heading": "Get 2 free samples (Subject to availability)",
     "set_1_product_1": "glam-bag-free",
-    "set_1_product_2": "jolie-compact-mirror-free",
+    "set_1_product_2": "",
     "set_1_product_3": "plump-it-hydrating-lip-mask-gold-free",
-    "set_1_product_4": "",
-    "set_1_product_5": "",
+    "set_1_product_4": "excell-eyelash-cleansing-brush-free",
+    "set_1_product_5": "free-sparkle-lash-wand-silver",
     "set_1_product_6": "",
-    "sample_set_2_max_product": 2,
-    "sample_set_2_heading": "Get 2 free samples (If out of stock samples will be replaced at our discretion)",
-    "set_2_product_1": "plume-precision-lash-cleansing-brush-1",
-    "set_2_product_2": "",
-    "set_2_product_3": "",
-    "set_2_product_4": "",
-    "set_2_product_5": "flutter-wands-sparkle",
+    "sample_set_2_max_product": 3,
+    "sample_set_2_heading": "Get 3 free samples (Subject to availability)",
+    "set_2_product_1": "free-sparkle-lash-wand-silver",
+    "set_2_product_2": "revive-24kt-cooling-eye-mask-1",
+    "set_2_product_3": "glam-bag-free",
+    "set_2_product_4": "plump-it-hydrating-lip-mask-gold-free",
+    "set_2_product_5": "excell-eyelash-cleansing-brush-free",
     "set_2_product_6": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/AF_2_-TM-header2_900x_400x_7222947c-7523-431c-980b-d84b21876002.webp",
     "checkout_logo_position": "center",
@@ -70,18 +70,38 @@
           "5dd05191-0568-4823-8b05-66a386596ae2": {
             "type": "column",
             "settings": {
-              "heading": "Custom products\/Wholesale",
+              "heading": "Custom\/Bare Edition Collection",
               "title": "Cleansers",
               "underline_column_heading": true,
               "menu": "cleansers",
               "image": "{{ shop.brand.cover_image }}",
-              "linked_to": "shopify:\/\/collections\/lashbath-bare-edition"
+              "linked_to": "#"
+            }
+          },
+          "45630b0a-0177-41e1-910d-e8fd6ce44880": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom\/Bare Edition Collection",
+              "title": "Brushes + Wands",
+              "underline_column_heading": true,
+              "menu": "brushes-wands",
+              "linked_to": "#"
+            }
+          },
+          "5008aaab-6244-4348-8a5f-d2d908a3372e": {
+            "type": "column",
+            "settings": {
+              "heading": "Custom\/Bare Edition Collection",
+              "title": "Sample Packs",
+              "underline_column_heading": true,
+              "menu": "sample-packs",
+              "linked_to": "#"
             }
           },
           "7eab4304-940b-4fa7-981e-1de9e9643b7a": {
             "type": "column",
             "settings": {
-              "heading": "Custom products\/Wholesale",
+              "heading": "Custom\/Bare Edition Collection",
               "title": "Lip + Eye Masks",
               "underline_column_heading": true,
               "menu": "bare-edition-lip-eye-masks",
@@ -89,40 +109,20 @@
               "linked_to": "#"
             }
           },
-          "5008aaab-6244-4348-8a5f-d2d908a3372e": {
-            "type": "column",
-            "settings": {
-              "heading": "Custom products\/Wholesale",
-              "title": "Sample Packs",
-              "underline_column_heading": true,
-              "menu": "sample-packs",
-              "linked_to": "#"
-            }
-          },
           "3f541231-7d27-4255-bbbd-99512d1ccf83": {
             "type": "column",
             "settings": {
-              "heading": "Custom products\/Wholesale",
+              "heading": "Custom\/Bare Edition Collection",
               "title": "Lash + Brow Serum",
               "underline_column_heading": true,
               "menu": "lash-brow-serum",
               "linked_to": "#"
             }
           },
-          "45630b0a-0177-41e1-910d-e8fd6ce44880": {
-            "type": "column",
-            "settings": {
-              "heading": "Custom products\/Wholesale",
-              "title": "Brushes + Wands",
-              "underline_column_heading": true,
-              "menu": "brushes-wands",
-              "linked_to": "#"
-            }
-          },
           "055a9bc7-f3fa-441d-8ee9-3a46a6635d04": {
             "type": "column",
             "settings": {
-              "heading": "Custom products\/Wholesale",
+              "heading": "Custom\/Bare Edition Collection",
               "title": "After Care Kits",
               "underline_column_heading": true,
               "menu": "after-care-kits",
@@ -132,7 +132,7 @@
           "961de6cb-46de-4f7b-b33b-b50892750c73": {
             "type": "column",
             "settings": {
-              "heading": "Custom products\/Wholesale",
+              "heading": "Custom\/Bare Edition Collection",
               "title": "Accessories",
               "underline_column_heading": true,
               "menu": "wholesale-accessories",
@@ -142,7 +142,7 @@
           "c66d557f-fda3-4a95-aebb-ba8e9b1d8a67": {
             "type": "column",
             "settings": {
-              "heading": "Custom products\/Wholesale",
+              "heading": "Custom\/Bare Edition Collection",
               "title": "Digital Consent Forms",
               "underline_column_heading": true,
               "menu": "digital-consent-forms",
@@ -152,7 +152,7 @@
           "d4665234-9c2b-40a3-bb18-d9f5fb34baba": {
             "type": "column",
             "settings": {
-              "heading": "Custom products\/Wholesale",
+              "heading": "Custom\/Bare Edition Collection",
               "title": "FAQ",
               "underline_column_heading": true,
               "menu": "faq",
@@ -162,7 +162,7 @@
           "1e935ac1-9bb8-4037-a412-9c4023adcf64": {
             "type": "column",
             "settings": {
-              "heading": "Retail",
+              "heading": "Product collection",
               "title": "CLEANSERS",
               "underline_column_heading": true,
               "menu": "header-item",
@@ -173,7 +173,7 @@
           "5fb6d10a-f3c7-4f7b-b3be-75239602e258": {
             "type": "column",
             "settings": {
-              "heading": "Retail",
+              "heading": "Product collection",
               "title": "LIP + EYE MASKS",
               "underline_column_heading": true,
               "menu": "lip-eye-masks",
@@ -183,40 +183,50 @@
           "65006463-c9e2-4abe-81ef-dc20c3970a43": {
             "type": "column",
             "settings": {
-              "heading": "Retail",
+              "heading": "Product collection",
               "title": "LASH + BROW SERUM",
               "underline_column_heading": true,
-              "menu": "lash-brow-serum",
+              "menu": "lash-brow-serum-1",
               "linked_to": "shopify:\/\/collections"
             }
           },
           "00b9e175-e386-45ef-9cc1-fce60644c6c9": {
             "type": "column",
             "settings": {
-              "heading": "Retail",
+              "heading": "Product collection",
               "title": "BRUSHES + WANDS",
               "underline_column_heading": true,
-              "menu": "brushes-wands",
-              "linked_to": "shopify:\/\/collections\/bare-edition-brushes"
+              "menu": "retail-brushes-wands",
+              "linked_to": ""
             }
           },
           "04f6a5c3-8ce7-4cc8-abb0-2ce5c815a972": {
             "type": "column",
             "settings": {
-              "heading": "Retail",
+              "heading": "Product collection",
               "title": "AFTERCARE KITS",
               "underline_column_heading": true,
-              "menu": "after-care-kits",
+              "menu": "retail-aftercare-kits",
               "linked_to": ""
             }
           },
           "ef0da6a4-e324-4208-a152-5b6bbf7c2722": {
             "type": "column",
             "settings": {
-              "heading": "Retail",
+              "heading": "Product Collection",
               "title": "Accessories",
               "underline_column_heading": true,
               "menu": "accessories",
+              "linked_to": ""
+            }
+          },
+          "c8e38cd0-8d47-451c-8ede-762d03663d90": {
+            "type": "column",
+            "settings": {
+              "heading": "Product Collection",
+              "title": "DIGITAL CONSENT FORMS",
+              "underline_column_heading": true,
+              "menu": "digital-consent-forms",
               "linked_to": ""
             }
           },
@@ -233,10 +243,10 @@
         },
         "block_order": [
           "5dd05191-0568-4823-8b05-66a386596ae2",
-          "7eab4304-940b-4fa7-981e-1de9e9643b7a",
-          "5008aaab-6244-4348-8a5f-d2d908a3372e",
-          "3f541231-7d27-4255-bbbd-99512d1ccf83",
           "45630b0a-0177-41e1-910d-e8fd6ce44880",
+          "5008aaab-6244-4348-8a5f-d2d908a3372e",
+          "7eab4304-940b-4fa7-981e-1de9e9643b7a",
+          "3f541231-7d27-4255-bbbd-99512d1ccf83",
           "055a9bc7-f3fa-441d-8ee9-3a46a6635d04",
           "961de6cb-46de-4f7b-b33b-b50892750c73",
           "c66d557f-fda3-4a95-aebb-ba8e9b1d8a67",
@@ -247,6 +257,7 @@
           "00b9e175-e386-45ef-9cc1-fce60644c6c9",
           "04f6a5c3-8ce7-4cc8-abb0-2ce5c815a972",
           "ef0da6a4-e324-4208-a152-5b6bbf7c2722",
+          "c8e38cd0-8d47-451c-8ede-762d03663d90",
           "69e00dac-ae41-441c-9565-7c63321d7059"
         ],
         "settings": {

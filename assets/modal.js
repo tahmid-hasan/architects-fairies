@@ -26,7 +26,6 @@ class Modal extends HTMLElement{
   }
   openListeners(){
     this.links.on("keypress.CoreModal click.CoreModal quick-open",o=>{
-      console.log(o)
       if("keypress"!==o.type||!1!==theme.a11y.click(o)){
         const i=o.target;
         this.links.forEach((t,e)=>{

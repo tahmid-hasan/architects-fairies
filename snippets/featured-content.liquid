@@ -134,7 +134,7 @@
             </h2>
           {% endif %}
           {% if title != blank %}
-            <h3 class="featured-content--title{% if image_with_text == true %} brush--stroke-large{% endif %}" data-item="{{ heading_type }} {{ mobile_heading_type }}">
+            <h3 class="featured-content--title" data-item="{{ heading_type }} {{ mobile_heading_type }}">
               {{ title | escape }}
             </h3>
           {% endif %}
@@ -160,7 +160,7 @@
           {% endif %}
           {% for block in content_blocks %}
             {% if block.settings.title != blank %}
-              <h3 class="featured-content--title{% if image_with_text == true %} brush--stroke-large{% endif %}" data-item="{{ heading_type }} {{ mobile_heading_type }}">
+              <h3 class="featured-content--title" data-item="{{ heading_type }} {{ mobile_heading_type }}">
                 {{ block.settings.title | escape }}
               </h3>
             {% endif %}

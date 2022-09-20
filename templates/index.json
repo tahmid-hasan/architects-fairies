@@ -8,7 +8,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/infographic_banner_1.jpg",
             "image_mobile": "shopify:\/\/shop_images\/infographic_banner_1_mobile_ec29a32a-8b9a-410b-8a3d-b76f28cd708f.jpg",
-            "overline": "A LASH SERUM",
+            "overline": "",
             "title": "customized lash & Brow After-care in 3 easy steps.",
             "description": "",
             "text_align": "left",
@@ -29,10 +29,11 @@
         },
         "150483a1-4815-47e6-b3e8-b68ddd12f7da": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/slideshow_Infogram_banners_2_69120430-d7f2-420f-8eb4-b131d77b6410.jpg",
             "image_mobile": "shopify:\/\/shop_images\/slideshow_Infogram_banners_2_mobile.jpg",
-            "overline": "A LASH SERUM",
+            "overline": "",
             "title": "customized lash & Brow After-care in 3 easy steps.",
             "description": "",
             "text_align": "left",
@@ -53,6 +54,7 @@
         },
         "af5d2cfd-ecc4-47bf-a41e-2e5bef44ce34": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/slideshow_Infogram_banners_3.jpg",
             "image_mobile": "shopify:\/\/shop_images\/slideshow_Infogram_banner_mobile_3.jpg",
@@ -139,13 +141,12 @@
     },
     "1660847897f721785b": {
       "type": "slideshow",
-      "disabled": true,
       "blocks": {
         "1660847897b268c2d0-0": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/private_label_banner_desktop.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/private_label_banner_mobile.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/4-Brand_Identity.png",
             "overline": "",
             "title": "",
             "description": "",
@@ -174,7 +175,7 @@
         "text-color": "auto",
         "background-color": "none",
         "spacing-above": false,
-        "spacing-below": false,
+        "spacing-below": true,
         "spacing-around-blocks": false,
         "image-height": 0,
         "darken-image": false,
@@ -189,6 +190,7 @@
     },
     "166314544434c0d78f": {
       "type": "image-with-text",
+      "disabled": true,
       "blocks": {
         "be024e5c-18b7-4bea-90e8-b08c56acdc5c": {
           "type": "content",
@@ -234,13 +236,9 @@
           "settings": {
           }
         },
-        "ca001b09-5657-47de-bfd3-05bc06f6d293": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/star-rating-badge\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "876bc47b-3205-422f-8358-0d91e14a946b": {
+          "type": "product-review",
           "settings": {
-            "use_metafields": false,
-            "sku_tagtype": "handle",
-            "is_featured_product": true,
-            "featured_product_handle": "branded-just-for-you-sample-pack"
           }
         },
         "64c8f8df-ff92-4990-8d0e-f8b3a780f8f1": {
@@ -261,7 +259,7 @@
             "size-chart-enabled": true,
             "size-chart-option": "size",
             "size-chart-content": "",
-            "field_name": "Bottle color, Are you a returning private label client?, Label color, Social Media"
+            "field_name": "Bottle color, Are you a returning private label client?, Label color, Social Media, Do You Want to Customize This Product"
           }
         },
         "1c6e77ed-2bbc-4a33-860a-c8b0059ea7f7": {
@@ -278,7 +276,7 @@
       },
       "block_order": [
         "1660562785df06303e-1",
-        "ca001b09-5657-47de-bfd3-05bc06f6d293",
+        "876bc47b-3205-422f-8358-0d91e14a946b",
         "64c8f8df-ff92-4990-8d0e-f8b3a780f8f1",
         "1660562785df06303e-3",
         "1660562785df06303e-4",
@@ -302,13 +300,13 @@
         "16599972219d8147a1-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/collection_list_infogram_1.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/collection_list_infogram_mobile_1.jpg",
+            "image": "shopify:\/\/shop_images\/Infogram2.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Steps.png",
             "wide": true,
             "tall": true,
             "retain-ratio": false,
             "title": "",
-            "link-url": "\/",
+            "link-url": "shopify:\/\/collections\/bare-edition-private-label-wholesale",
             "link-text": ""
           }
         },
@@ -321,7 +319,7 @@
             "tall": false,
             "retain-ratio": false,
             "title": "",
-            "link-url": "\/",
+            "link-url": "shopify:\/\/collections\/lip-and-eye-masks",
             "link-text": ""
           }
         },
@@ -334,7 +332,7 @@
             "tall": false,
             "retain-ratio": false,
             "title": "",
-            "link-url": "\/",
+            "link-url": "shopify:\/\/collections\/all-cleansers",
             "link-text": ""
           }
         },
@@ -347,7 +345,7 @@
             "tall": false,
             "retain-ratio": false,
             "title": "",
-            "link-url": "\/",
+            "link-url": "shopify:\/\/collections\/sample-packs",
             "link-text": ""
           }
         },
@@ -360,7 +358,7 @@
             "tall": false,
             "retain-ratio": false,
             "title": "",
-            "link-url": "\/",
+            "link-url": "shopify:\/\/products\/whiplash-eyelash-and-brow-growth-serum-10-tubes-new",
             "link-text": ""
           }
         }
@@ -402,7 +400,7 @@
         "featured-collection--description--show": false,
         "display-type": "slider",
         "products-per-row--desktop": "3",
-        "products-per-row--mobile": "1"
+        "products-per-row--mobile": "2"
       }
     },
     "1660582137f81c0933": {

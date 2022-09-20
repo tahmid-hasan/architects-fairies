@@ -186,7 +186,11 @@
                 {{- form | payment_terms -}}
               {% endform %}
               
-
+            {%- when 'product-review' -%}
+              <div class="shopify-app-block">
+                <a class="product-template--reviews-header" href="#stamped-main-widget" tabindex="-1"><span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-title="{{ product.title | escape }}" data-product-type="{{ product.type }}" style="display: block;">{{ product.metafields.stamped.badge }}</span></a>
+              </div>
+            
             {%- when 'buy-buttons' -%}
               {%- if onboarding -%}
                 <div class="featured-product--add-to-cart" data-item="button">
@@ -513,6 +517,11 @@
       {
         "type": "rating",
         "name": "Product rating",
+        "limit": 1
+      },
+      {
+        "type": "product-review",
+        "name": "Product rating (stamped)",
         "limit": 1
       },
       {

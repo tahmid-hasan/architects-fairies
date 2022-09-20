@@ -232,7 +232,7 @@
     width: 180px;
   }
   .stamped-reviews-title {
-    font-weight: 12px;
+    font-weight: 700;
   }
   .stamped-reviews-title, .stamped-reviews-message {
     margin-bottom: 16px;
@@ -246,6 +246,55 @@
   .swiper-pagination {
     display: none;
   }
+}
+@media only screen and (min-width:768px) and (max-width:1023px){
+  .stamped-reviews-section-heading[data-item="section-heading"] {
+    font-size: 24px;
+    margin-bottom: 75px;
+  }
+  .review-count {
+    font-size: 24px;  
+  }
+  .review-count .count--text {
+    font-size: 14px;
+  }
+  .review-card {
+    gap: 10px;
+  }
+  .stamped-review-section .apps--root .content--wrapper {
+    margin: 0 84px;
+    padding-top: 60px;
+  }
+  .review-image {
+    max-width: 100px;
+    width: 100px;
+  }
+  .stamped-reviews-title {
+    font-weight: 700;
+  }
+  .stamped-reviews-title, .stamped-reviews-message {
+    margin-bottom: 5px;
+    font-size:11px;
+    line-height:1.2;
+  }
+  .review-card--bar {
+    margin: 7px 0px;
+  }
+  .stamped-reviews-message, .stamped-reviews-author, .stamped-reviews-date {
+    font-size: 10px;
+  }
+  .swiper-pagination {
+    display: none;
+  }
+  .stamped-reviews-message .stamped-reviews-message-block {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    min-height: 36px;
+  }
+  .review-meta,.review-stars{line-height:1.2;}
+  .stamped-reviews-rating{font-size:16px;}
 }
 {% endstyle %}
 

@@ -12,7 +12,6 @@ class Cart extends HTMLElement{
     this.renderDynamicCheckoutButtons();
     const dataElement = this.querySelector('script[data-promo-product-ids]')
     this.promo_ids=dataElement? JSON.parse(dataElement.textContent):"{}"
-    console.log(this.promo_ids)
     this.updatePromoProduct()
   }
   eventListeners(){
@@ -76,7 +75,6 @@ class Cart extends HTMLElement{
     })
   }
   renderDynamicCheckoutButtons(){
-    console.log('dynamic checkout buttons')
     if(window.location.pathname===theme.urls.cart){
       const t=document.querySelector(".off-canvas--right-sidebar .cart--additional-buttons");
       if(t&&t.remove(),"small"===theme.mqs.current_window){
@@ -110,8 +108,6 @@ class Cart extends HTMLElement{
         isNaN(parseInt(e.value))?1:parseInt(e.value)),
         a=await this.updateQuantity(t,a)
         r.value=e
-        
-        console.log(t)
         try{
           var a=await this.updateQuantity(t,e);
           await Cart.updateAllHtml(),a||this.showQuantityError(t)
@@ -133,7 +129,6 @@ class Cart extends HTMLElement{
   removeItems(v){
     const d={updates:{}}
     v.forEach(c=>d.updates[c.id]=0)
-    console.log(d)
     fetch('/cart/update.js', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -256,7 +251,6 @@ customElements.define("cart-root",Cart);
 class ProductQuantityInput extends HTMLElement{
   constructor(){super()}
   connectedCallback(){
-    console.log('quantity input')
     this.plusButtonListener()
     this.minusButtonListener()
   }
@@ -282,7 +276,6 @@ class ProductQuantityInput extends HTMLElement{
     const i=this.querySelector('.product-quantity--input')
     let currentValue=parseInt(i.value)
     if(t=='plus') i.value=currentValue + 1
-    console.log(i.value)
     if(t=='minus') {
       if(currentValue!=1) i.value=currentValue - 1
     }

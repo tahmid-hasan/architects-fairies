@@ -1,0 +1,83 @@
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+  var w3js = $.noConflict(true);
+</script>
+{{ 'https://productoptions.w3apps.co/js/options.js' | script_tag }}
+<script type="text/javascript">
+  setTimeout(function() {
+    w3productOptionsJS(w3js);
+  }, 0);
+  var currentAdditional = 0;
+  var priceDiv = w3js(`.product-page--block[data-block-type="price"] .product-price--original, .featured-product--wrapper .product-price--original`); // Add your price div class between the quotes
+  var comparePriceDiv = w3js(".product-price--compare"); // Add your compare at price div class between the quotes
+  document.addEventListener("variant-change", function(e) {
+    setTimeout(function(){
+      setPrice() // Prints "Example of an event"
+    }, 500)
+  });
+  function setPrice() {
+    var $ = w3js;
+    var shopMoneyFormat = '{{ shop.money_format }}';
+    var defaultCurrrency = '{{ shop.currency }}';
+    var originalPrice = $(priceDiv).text();
+    console.log(originalPrice)
+    if (!$(".po-price").length) {
+      var newPriceElement = $(".po-original-price").clone().addClass("po-price").removeClass("po-original-price");
+      $(".po-original-price").after(newPriceElement);
+    }
+    originalPrice = Number(originalPrice.replace(/[^0-9\.]+/g, ""));
+    if (currentAdditional == null) {
+      currentAdditional = 0;
+    }
+    if (typeof(currentAdditional) == "undefined") {
+      currentAdditional = 0;
+    }
+    if (isNaN(currentAdditional)) {
+      currentAdditional = 0;
+    }
+    var newPrice = (originalPrice + currentAdditional) * 100;
+    var formattedPrice = Shopify.formatMoney(newPrice, shopMoneyFormat);
+    $(".po-price").html(formattedPrice);
+    try {
+      if (typeof Currency != "undefined") {
+        if (typeof Currency.cookie != "undefined") {
+          if (Currency.cookie.read() != null) {
+            shopCurrency = Currency.cookie.read();
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    $(".po-price").show();
+    $(".po-original-price").hide();
+
+    /*---Compare At Price Update---*/
+    if (comparePriceDiv.length > 0 && Number(comparePriceDiv.text().replace(/[^0-9\.]+/g, "")) > Number(priceDiv.text().replace(/[^0-9\.]+/g, ""))){
+      var originalComparePrice = $(comparePriceDiv).text();
+      if (!$(".po-compare-price").length) {
+        var newComparePriceElement = $(".po-original-compare-price").clone().addClass("po-compare-price").removeClass("po-original-compare-price");
+        $(".po-original-compare-price").after(newComparePriceElement);
+      }
+      originalComparePrice = Number(originalComparePrice.replace(/[^0-9\.]+/g, ""));
+      var newComparePrice = (originalComparePrice + currentAdditional) * 100;
+      var formattedComparePrice = Shopify.formatMoney(newComparePrice, shopMoneyFormat);
+      $(".po-compare-price").html(formattedComparePrice);
+      $(".po-compare-price").show();
+      $(".po-original-compare-price").hide();
+    }
+  }
+
+  w3js(function() {
+    var $ = w3js;
+    $(priceDiv).addClass("po-original-price");
+
+    if (comparePriceDiv.length > 0){
+      $(comparePriceDiv).addClass("po-original-compare-price");
+    }
+    $('body').on("productOptionsPriceChange", function(e, pricingTotal, productOptionsContainer) {
+      currentAdditional = pricingTotal;
+      setPrice();
+    });
+  });
+</script>

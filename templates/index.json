@@ -144,9 +144,10 @@
       "blocks": {
         "1660847897b268c2d0-0": {
           "type": "image",
+          "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/private_label_banner_desktop.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/4-Brand_Identity.png",
+            "image": "shopify:\/\/shop_images\/Brand-Identity.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Brand_Identity.png",
             "overline": "",
             "title": "",
             "description": "",
@@ -186,6 +187,19 @@
         "auto-rotate": false,
         "rotate-frequency": 7,
         "transition_type": "slide"
+      }
+    },
+    "1663759470e12e77a4": {
+      "type": "featured-text-with-image",
+      "settings": {
+        "background-color": "none",
+        "background-image": "shopify:\/\/shop_images\/BG.png",
+        "container-width": 4,
+        "spacing-above": false,
+        "spacing-below": true,
+        "overline": "",
+        "heading": "WHY PRIVATE LABEL",
+        "text": "<p>Create a winning retail brand that <strong>sets you apart<\/strong> from the crowd.<\/p><p>Choose Lash and Brow aftercare products from our superior line of products and then<strong> add your label and branding<\/strong> to <strong>sell as your own retail products.<\/strong><\/p><p>Whether you are a solo lash artist or a salon with multiple team members, <strong>retailing your own line of lash<\/strong> aftercare is a must<\/p><p><strong>TOP 3 REASONS<\/strong><\/p><p>Control what your clients use on their lashes and ensure they’re using the <strong>correct products<\/strong>.<\/p><p>Increase your profit margin and<strong> create more income <\/strong>without the need to add more services.<\/p><p>Elevate your brand to a professional level and increase brand loyalty.<\/p>"
       }
     },
     "166314544434c0d78f": {
@@ -398,7 +412,7 @@
         "spacing-below": true,
         "featured-collection--image--show": false,
         "featured-collection--description--show": false,
-        "display-type": "slider",
+        "display-type": "grid",
         "products-per-row--desktop": "3",
         "products-per-row--mobile": "2"
       }
@@ -470,6 +484,7 @@
     "slideshow",
     "1660545022d25c6b6d",
     "1660847897f721785b",
+    "1663759470e12e77a4",
     "166314544434c0d78f",
     "1660562785cc4e80cf",
     "16599972219fe64bc1",

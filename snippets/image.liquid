@@ -115,11 +115,21 @@
         {% if image_mobile %}
         <source data-srcset="{{ image_mobile | img_url: '295x' }} 295w,
           {{ image_mobile | img_url: '394x' }} 394w,
-          {{ image_mobile | img_url: '428x' }} 428w" media="(max-width: 428px)" />
+          {{ image_mobile | img_url: '428x' }} 428w,
+          {{ image_mobile | img_url: '550x' }} 550w,
+          {{ image_mobile | img_url: '700x' }} 700w,
+          {{ image_mobile | img_url: '800x' }} 800w,
+          {{ image_mobile | img_url: '1000x' }} 1000w,
+          {{ image_mobile | img_url: '1200x' }} 1200w" media="(max-width: 428px)" />
         {% else %}
         <source data-srcset="{{ image | img_url: '295x' }} 295w,
           {{ image | img_url: '394x' }} 394w,
-          {{ image | img_url: '428x' }} 428w" media="(max-width: 428px)" />
+          {{ image | img_url: '428x' }} 428w,
+          {{ image | img_url: '550x' }} 550w,
+          {{ image | img_url: '700x' }} 700w,
+          {{ image | img_url: '800x' }} 800w,
+          {{ image | img_url: '1000x' }} 1000w,
+          {{ image | img_url: '1200x' }} 1200w" media="(max-width: 428px)" />
         {% endif %}
         <source data-srcset="{{ image | img_url: '590x' }} 590w,
           {{ image | img_url: '700x' }} 700w,

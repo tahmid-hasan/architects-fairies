@@ -112,12 +112,12 @@
       {% if image_type == 'raw' %}
         <picture>
           {% if image_mobile %}
-          <source src="{{ image_mobile | img_url: '1500x' }}" media="(max-width: 428px)"/>
+            <source media="(max-width: 428px)" srcset="{{ image_mobile | img_url: '1000x' }}" />
           {% else %}
-          <source src="{{ image | img_url: '1500x' }}" />
+            <source media="(min-width: 428px)" srcset="{{ image | img_url: '1000x' }}" />
           {% endif %}
-          <source src="{{ image | img_url: '1500x' }}" />
-          <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy">
+          <source media="(min-width: 429px)" srcset="{{ image | img_url: 'master' }}" />
+          <img class="image--raw" src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy">
         </picture>
       {% else %}
         <picture>

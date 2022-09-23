@@ -175,14 +175,16 @@
                   {%
                     render "image",
                     image: image,
-                    full_width: true
+                    full_width: true,
+                    image_type: "raw"
                   %}
                 {% else %}
                   {%
                     render "image",
                     image: image,
                     image_mobile: image_mobile,
-                    full_width: true
+                    full_width: true,
+                    image_type: "raw"
                   %}
                 {% endunless %}
               {% else %}

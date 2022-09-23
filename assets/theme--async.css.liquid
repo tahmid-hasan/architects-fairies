@@ -448,7 +448,7 @@
 }
 .w3-product-options-form .product-options-price-info{background-color: #fff5ed;}
 .w3-product-options-form .pricing-info-header{background-color: #60645e;}
-.image-with-text--root .featured-content--description{text-align:center;text-align-last:center;letter-spacing:-1px;}
+.image-with-text--root .featured-content--description{text-align:justify;text-align-last:center;letter-spacing:-1px;}
 .image-with-text--root .featured-content--title{word-break:break-word;font-weight:600;}
 .image-with-text--root .featured-content--description[data-ordered-list=true] p{position:relative;}
 /* .image-with-text--root .featured-content--description[data-ordered-list=true] p::before{content:"";font-weight:700;position:absolute;top:0;left:0;background-image:url('brush_stroke_small.png');padding:0px 16px 16px;margin-left:-16px;background-position: center;background-repeat: no-repeat;}
@@ -697,24 +697,17 @@
 	.fa-star-half-o:before, .fa-star-o:before, .fa-star:before, .stamped-fa-star-half-o:before, .stamped-fa-star-o:before, .stamped-fa-star:before{font-size:11px !important;}
 	.stamped-badge-caption{font-size:9px;}
 }
-@media only screen and (min-width:393px) and (max-width:500px) {
-	.rte, [data-item=paragraph], [data-item=rte-content], body{font-size:14px;}
-  [data-item=overline]{font-size:11px;}
-  .featured-content--title{font-size:15px;}
-  [data-item=block-link]>*{font-size:10px;}
-	[data-item~=section-heading], h1, h2{font-size:14px;}
-  [data-item=secondary-button]>*{font-size:10px}
-  [data-item=accent-text], input, label:not([data-item]), textarea{font-size:10px;}
-	label{padding-bottom:0;}
-	.product--title{font-size:12px;}
-	.stamped-badge{justify-content:center;}
-	.fa-star-half-o:before, .fa-star-o:before, .fa-star:before, .stamped-fa-star-half-o:before, .stamped-fa-star-o:before, .stamped-fa-star:before{font-size:12px !important;}
-	.stamped-badge-caption{font-size:10px;}
-}
 @media only screen and (min-width:768px) and (max-width:1023px){
 	.product--title{font-size:13px;}
 	.stamped-badge{justify-content:center;}
 	.fa-star-half-o:before, .fa-star-o:before, .fa-star:before, .stamped-fa-star-half-o:before, .stamped-fa-star-o:before, .stamped-fa-star:before{font-size:14px !important;}
 	.stamped-badge-caption{font-size:11px;}
 }
+
+.featured-product--title,
+.featured-collection--title,
+#insta-feed h2 {
+  font-weight: 600;
+}
+
 

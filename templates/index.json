@@ -144,10 +144,9 @@
       "blocks": {
         "1660847897b268c2d0-0": {
           "type": "image",
-          "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/Brand-Identity.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Brand_Identity.png",
+            "image": "shopify:\/\/shop_images\/Brand_Identity.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Brand_Identity_94b66314-2186-4eaf-894e-5320cb3ab8b2.jpg",
             "overline": "",
             "title": "",
             "description": "",
@@ -191,6 +190,7 @@
     },
     "1663759470e12e77a4": {
       "type": "featured-text-with-image",
+      "disabled": true,
       "settings": {
         "background-color": "none",
         "background-image": "shopify:\/\/shop_images\/BG.png",
@@ -314,8 +314,8 @@
         "16599972219d8147a1-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Infogram2.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Steps.png",
+            "image": "shopify:\/\/shop_images\/collection_grid_infogram.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/collection_grid_infogram_mobile.jpg",
             "wide": true,
             "tall": true,
             "retain-ratio": false,
